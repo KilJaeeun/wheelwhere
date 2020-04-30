@@ -1,6 +1,9 @@
 package com.example.kotlin_tmap.data.mapData
 
+import android.content.Context
 import com.example.kotlin_tmap.data.MapPoint
+import com.skt.Tmap.TMapPoint
+import com.skt.Tmap.TMapView
 
 object MapPointRepository : MapPointInterface{
 
@@ -8,13 +11,12 @@ object MapPointRepository : MapPointInterface{
         MapPointData()
     }
 
-    override fun mapPointList(pointList: (List<MapPoint>) -> Unit, size: Int) {
+    override fun mapPointList(context: Context, mapView: TMapView, tmapPoint: TMapPoint)
+        = MAP_POINT_DATA.mapPointList(context, mapView, tmapPoint)
 
-    }
 
-    override fun addList(pointList: (List<MapPoint>) -> Unit, size: Int) {
-        MAP_POINT_DATA.addList(pointList, size)
+    override fun addList(pointList: ArrayList<MapPoint>, size: Int)
+            = MAP_POINT_DATA.addList(pointList, size)
 
-    }
 
 }

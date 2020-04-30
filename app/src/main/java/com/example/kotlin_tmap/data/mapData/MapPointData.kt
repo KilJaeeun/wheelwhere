@@ -1,28 +1,28 @@
 package com.example.kotlin_tmap.data.mapData
 
+import android.content.Context
+import com.example.kotlin_tmap.Async.FindAroundTask
 import com.example.kotlin_tmap.data.MapPoint
+import com.example.kotlin_tmap.data.mapData.AsyncContract.MapPointContract
+import com.skt.Tmap.TMapPoint
+import com.skt.Tmap.TMapView
 
-class MapPointData : MapPointInterface{
-    override fun mapPointList(pointList: (List<MapPoint>) -> Unit, size: Int) {
+class MapPointData : MapPointInterface, MapPointContract{
+    override fun mapPointList(context: Context, mapView: TMapView, tmapPoint: TMapPoint) {
         val list = mutableListOf<MapPoint>()
-        for(index in 1..size){
 
-            val name =""
-            val lat = 0.0
-            val lon = 1.0
+       /* val asyncAround : FindAroundTask? = FindAroundTask() //asyncPath를 지정 하고 FindAroundTask init
+        asyncAround!!.FindAroundTask(context,mapView) //context와 mapview 넘겨줌.
+        asyncAround.execute(tmapPoint)*/
 
-            list.add(MapPoint(name, lat, lon))
-        }
-        pointList(list)
+
     }
 
-    override fun addList(pointList: (List<MapPoint>) -> Unit, size: Int) {
+    override fun addList(pointList: ArrayList<MapPoint>, size: Int) {
         val list = mutableListOf<MapPoint>()
-        for (index in 1..size){
+    }
 
-        }
-        pointList(list)
-
+    override fun getDataList() {
     }
 
 }

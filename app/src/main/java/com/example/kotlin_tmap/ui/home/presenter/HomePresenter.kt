@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
@@ -11,27 +12,32 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.kotlin_tmap.MainActivity
+import com.example.kotlin_tmap.R
 import com.example.kotlin_tmap.base.App
+import com.example.kotlin_tmap.data.MapPoint
 import com.example.kotlin_tmap.ui.home.HomeFragment
-import com.skt.Tmap.TMapGpsManager
-import com.skt.Tmap.TMapView
+import com.example.kotlin_tmap.ui.home.adapter.model.PointRecyclerModel
+import com.example.kotlin_tmap.ui.home.model.DataSource
+import com.example.kotlin_tmap.ui.home.model.DataSourceObject
+import com.skt.Tmap.*
 
 class HomePresenter(val context: Context,
-                    val activity: Activity,
-                    val view : HomeContract.View) : HomeContract.Presenter{
-
-
+                    private val activity: Activity,
+                    private val mapView: TMapView,
+                    private val pointRecyclerModel: PointRecyclerModel,
+                    private val view : HomeContract.View) : HomeContract.Presenter{
 
     private val requiredPermissions = arrayOf(
         Manifest.permission.ACCESS_FINE_LOCATION,
         Manifest.permission.ACCESS_COARSE_LOCATION
     )
 
+    private val dataSourceObject : DataSourceObject by lazy {
+        DataSourceObject(view, this@HomePresenter, pointRecyclerModel)
+    }
 
     override fun loadMap(mapView : TMapView) {
         view.showLoading()
-
         mapView.run {
             setSKTMapApiKey("l7xx018af8f0f00743e8ac9cc583dcbf19d4")
             zoomLevel = 15
@@ -39,7 +45,6 @@ class HomePresenter(val context: Context,
             setLanguage(TMapView.LANGUAGE_KOREAN)
             setCompassMode(true)
             setIconVisibility(true)
-
         }
     }
 
@@ -51,14 +56,12 @@ class HomePresenter(val context: Context,
             provider  = TMapGpsManager.NETWORK_PROVIDER
             provider = TMapGpsManager.GPS_PROVIDER
             OpenGps()
-            Log.d("테스트 ", "Presenter의 Mylocation")
         }
     }
 
 
     override fun loadMyLocation(mapView: TMapView) {
         val tmapGps = TMapGpsManager(activity)
-
         tmapGps.run {
             minTime = 1000
             minDistance = 5F
@@ -72,7 +75,6 @@ class HomePresenter(val context: Context,
                 val longitude = location.longitude
                 mapView.setCenterPoint(longitude, latitude)
                 mapView.setLocationPoint(longitude, latitude)
-                Log.d("맵 테스트","$latitude // ${longitude}")
             }
             override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}
             override fun onProviderEnabled(provider: String) {}
@@ -98,18 +100,42 @@ class HomePresenter(val context: Context,
             if (ContextCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED){
                 //만약 권한이 없다면 rejectedPermissionList에 추가
                 rejectedPermissionList.add(permission)
-                Log.d("테스트 ", "권한이 없어 추가")
             }
         }
         //거절된 퍼미션이 있다면...
         if (rejectedPermissionList.isNotEmpty()) {
-            Log.d("테스트 ", "권한이 없어 요청")
             //권한 요청
             val array = arrayOfNulls<String>(rejectedPermissionList.size)
-
             ActivityCompat.requestPermissions(context as Activity, rejectedPermissionList.toArray(array), 1)
-        }else{
-            Log.d("테스트 ", "권한이 있음")
+        }else{ //권한 있음
         }
     }
+
+    //Async호출
+    override fun loadAroundData(context: Context, mapView: TMapView, tmapPoint: TMapPoint) {
+        pointRecyclerModel.refreshList() //기존 리스트 초기화
+        view.showLoading()
+        dataSourceObject.FindAroundNamePOI(tmapPoint)
+    }
+
+    override fun putMarkeronMap(point: ArrayList<MapPoint>) { //가져온 정보 지도에 뿌려주기.
+        var i = 0
+        point.forEach {
+            val bitmapIcon = BitmapFactory.decodeResource(context.resources, R.drawable.boxicon)
+
+            val markerItem = TMapMarkerItem()
+            markerItem.run {
+                icon = bitmapIcon
+                tMapPoint = TMapPoint(it.latitude, it.longitude)
+                name = it.name
+            }
+
+            mapView.addMarkerItem("markerItem $i", markerItem)
+            i++
+        }
+        val centerPoint : TMapPoint = mapView.centerPoint //현재 보이는 맵 가운데 좌표 가져오기.
+        mapView.setCenterPoint(centerPoint.longitude,centerPoint.latitude,true)
+    }
+
+
 }

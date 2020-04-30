@@ -1,10 +1,13 @@
 package com.example.kotlin_tmap.data.mapData
 
+import android.content.Context
 import com.example.kotlin_tmap.data.MapPoint
+import com.skt.Tmap.TMapPoint
+import com.skt.Tmap.TMapView
 
 interface MapPointInterface{
 
-    fun mapPointList(pointList : (List<MapPoint>) -> Unit, size : Int)
+    fun mapPointList(context: Context, mapView: TMapView, tmapPoint: TMapPoint)
 
-    fun addList(pointList : (List<MapPoint>) -> Unit, size : Int)
+    fun addList(pointList: ArrayList<MapPoint>, size: Int)
 }

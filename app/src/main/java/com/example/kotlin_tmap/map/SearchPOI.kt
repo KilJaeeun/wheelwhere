@@ -11,6 +11,7 @@ import com.example.kotlin_tmap.Async.FindPoiTask
 import com.example.kotlin_tmap.R
 import com.example.kotlin_tmap.base.App
 import com.example.kotlin_tmap.data.MapPoint
+import com.example.kotlin_tmap.data.mapData.MapPointRepository
 import com.skt.Tmap.TMapData
 import com.skt.Tmap.TMapPOIItem
 import com.skt.Tmap.TMapPoint
@@ -61,14 +62,14 @@ class SearchPOI : AppCompatActivity() {
         btnAround.setOnClickListener {
             val tMapPoint : TMapPoint = poiMap.centerPoint
 
-            val asyncAround : FindAroundTask? = FindAroundTask() //asyncPath를 지정 하고 FindAroundTask init
+            /*val asyncAround : FindAroundTask? = FindAroundTask() //asyncPath를 지정 하고 FindAroundTask init
             asyncAround!!.FindAroundTask(context,poiMap) //context와 mapview 넘겨줌.
 
             dataList.clear()
             dataList = ArrayList<MapPoint>()
             val handler = Handler()
             dataList = asyncAround.execute(tMapPoint).get()
-
+*/
         }
 
 
