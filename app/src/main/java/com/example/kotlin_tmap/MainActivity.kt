@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.replace
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -31,18 +32,23 @@ class MainActivity : AppCompatActivity() {
     //퍼미션 사용
     private lateinit var permission : permission
 
+    val fragmentManger = supportFragmentManager
+
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item->
         when(item.itemId){
             R.id.navigation_home->{
-                replace(R.id.container, homeFragment)
+                fragmentManger.beginTransaction().replace(R.id.container,homeFragment).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard->{
-                replace(R.id.container, dashboardFragment)
+                fragmentManger.beginTransaction().replace(R.id.container,dashboardFragment).commit()
+                /*replace(R.id.container, dashboardFragment)*/
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications->{
-                replace(R.id.container, notificationFragment)
+                fragmentManger.beginTransaction().replace(R.id.container,notificationFragment).commit()
+                /*replace(R.id.container, notificationFragment)*/
                 return@OnNavigationItemSelectedListener true
             }
         }

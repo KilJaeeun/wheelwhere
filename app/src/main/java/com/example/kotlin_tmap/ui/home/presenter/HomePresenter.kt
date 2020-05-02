@@ -23,7 +23,6 @@ import com.skt.Tmap.*
 
 class HomePresenter(val context: Context,
                     private val activity: Activity,
-                    private val mapView: TMapView,
                     private val pointRecyclerModel: PointRecyclerModel,
                     private val view : HomeContract.View) : HomeContract.Presenter{
 
@@ -31,6 +30,11 @@ class HomePresenter(val context: Context,
         Manifest.permission.ACCESS_FINE_LOCATION,
         Manifest.permission.ACCESS_COARSE_LOCATION
     )
+
+    companion object{
+        lateinit var mapsView : TMapView
+    }
+
 
     private val dataSourceObject : DataSourceObject by lazy {
         DataSourceObject(view, this@HomePresenter, pointRecyclerModel)
@@ -46,6 +50,7 @@ class HomePresenter(val context: Context,
             setCompassMode(true)
             setIconVisibility(true)
         }
+
     }
 
     override fun myLocation(tmapsGps : TMapGpsManager) {
@@ -111,11 +116,14 @@ class HomePresenter(val context: Context,
         }
     }
 
+
+
     //Async호출
     override fun loadAroundData(context: Context, mapView: TMapView, tmapPoint: TMapPoint) {
         pointRecyclerModel.refreshList() //기존 리스트 초기화
         view.showLoading()
         dataSourceObject.FindAroundNamePOI(tmapPoint)
+        mapsView = mapView
     }
 
     override fun putMarkeronMap(point: ArrayList<MapPoint>) { //가져온 정보 지도에 뿌려주기.
@@ -130,12 +138,10 @@ class HomePresenter(val context: Context,
                 name = it.name
             }
 
-            mapView.addMarkerItem("markerItem $i", markerItem)
+            mapsView.addMarkerItem("markerItem $i", markerItem)
             i++
         }
-        val centerPoint : TMapPoint = mapView.centerPoint //현재 보이는 맵 가운데 좌표 가져오기.
-        mapView.setCenterPoint(centerPoint.longitude,centerPoint.latitude,true)
+        val centerPoint : TMapPoint = mapsView.centerPoint //현재 보이는 맵 가운데 좌표 가져오기.
+        mapsView.setCenterPoint(centerPoint.longitude,centerPoint.latitude,true)
     }
-
-
 }
