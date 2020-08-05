@@ -1,7 +1,7 @@
 # wheelwhere
 휠웨어는  휠체어사용자를 위한 위치기반 서비스입니다.
 
-
+* 서버 : http://wheel.pythonanywhere.com/
 ## 제작 앱 명 및 해설
 
 휠체어이용자를  위한 앱입니다.
