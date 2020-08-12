@@ -13,4 +13,5 @@
     <string name="signout_fail">로그아웃 실패</string>
     <string name="signout_fail_null">이메일과 비밀번호를 입력해주세요</string>
     <string name="kakao_app_key">86890c750a162c5756a798f6ca320c30</string>
+    <string name="naver_client_id">7htfbvvjqn</string>
 </resources>
