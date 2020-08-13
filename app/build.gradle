@@ -49,11 +49,11 @@ dependencies {
     // 카카오 로그
     implementation "com.kakao.sdk:v2-user:2.0.0"
     implementation group: 'com.kakao.sdk', name: 'usermgmt', version: project.KAKAO_SDK_VERSION
-    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+    implementation 'com.facebook.android:facebook-android-sdk:5.15.3'
     //파이어베이스 이메일 인증
-    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
     //파이어베이스
-    implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.firebase:firebase-core:17.4.4'
     implementation 'com.google.firebase:firebase-auth-ktx:19.3.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -61,11 +61,13 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
 
-    implementation 'com.facebook.stetho:stetho:1.5.0'
-    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
-    implementation 'com.facebook.stetho:stetho-js-rhino:1.5.0'
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+    implementation 'com.facebook.stetho:stetho-js-rhino:1.5.1'
     // 네이버 지도
     implementation 'com.naver.maps:map-sdk:3.9.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    implementation "org.jetbrains.anko:anko:0.10.8"
 }
 apply plugin: 'com.google.gms.google-services'
