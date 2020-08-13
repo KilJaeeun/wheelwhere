@@ -8,21 +8,12 @@ import retrofit2.http.*
 
 interface RetrofitService {
 
-//    @POST("users")
-//    @FormUrlEncoded
-//    fun register(
-//        @Field("id") usernmae: String,
-//        @Field("password") password1: String
-//    ): Call<User>
-//
-//
-//    @POST("users")
-//    @FormUrlEncoded
-//    fun login(
-//        @Field("username") username: String,
-//        @Field("password") password: String
-//    ): Call<User>
+    @GET("/posts/")
+    fun getDataList(): Call<ArrayList<TestInfo>>
 
-
+    @POST("/posts/")
+    fun createData(
+        @Body rest: TestInfo
+    ): Call<TestInfo>
 
 }
