@@ -13,20 +13,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
+<!-- <<<<<< HEAD -->
         <activity android:name=".AddPlace">
-=======
-        <activity android:name=".LoginActivity">
->>>>>>> 84ff9ad0494a84edcdacaa3f1cff63aab4daf719
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
 =======
-        <activity android:name=".AddPlace" />
+        <activity android:name=".LoginActivity">
+>>>>>>> 84ff9ad0494a84edcdacaa3f1cff63aab4daf719
+
+        </activity>
+<!-- <<<<<< HEAD -->
+=======
+
 >>>>>>> 84ff9ad0494a84edcdacaa3f1cff63aab4daf719
         <activity android:name=".Map_Toilet">
 

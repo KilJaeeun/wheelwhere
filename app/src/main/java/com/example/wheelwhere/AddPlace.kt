@@ -28,14 +28,14 @@ class AddPlace : AppCompatActivity() {
         var elvFlag: Boolean = false
         var helpFlag: Boolean = false
 
-        service.getDataList().enqueue(object : Callback<ArrayList<TestInfo>> {
-            override fun onFailure(call: Call<ArrayList<TestInfo>>, t: Throwable) {
+        service.getDataList().enqueue(object : Callback<ArrayList<Place>> {
+            override fun onFailure(call: Call<ArrayList<Place>>, t: Throwable) {
                 Log.d("result!!", "Error (getting data)!")
             }
 
             override fun onResponse(
-                call: Call<ArrayList<TestInfo>>,
-                response: Response<ArrayList<TestInfo>>
+                call: Call<ArrayList<Place>>,
+                response: Response<ArrayList<Place>>
             ) {
                 if (response.isSuccessful) {
                     val dataList = response.body()
@@ -89,8 +89,8 @@ class AddPlace : AppCompatActivity() {
             //val edt3 = findViewById<EditText>(R.id.new_number_add) as EditText
             //val number: String = edt3.text.toString()
 
-            val rest: TestInfo =
-                TestInfo(
+            val rest: Place =
+                Place(
                     name = name,
                     is_toilet = restFlag,
                     is_parking = parkFlag,
@@ -111,12 +111,12 @@ class AddPlace : AppCompatActivity() {
             Log.d("result!!", "elvFlag : " + rest.is_elibator)
             Log.d("result!!", "helpFlag : " + rest.is_helper)
 
-            service.createData(rest).enqueue(object : Callback<TestInfo> {
-                override fun onFailure(call: Call<TestInfo>, t: Throwable) {
+            service.createData(rest).enqueue(object : Callback<Place> {
+                override fun onFailure(call: Call<Place>, t: Throwable) {
                     Log.d("result!!", "failed to upload !")
                 }
 
-                override fun onResponse(call: Call<TestInfo>, response: Response<TestInfo>) {
+                override fun onResponse(call: Call<Place>, response: Response<Place>) {
                     if (response.isSuccessful) {
                         val rest = response.body()
                         Log.d("result!!", "uploaded !")
@@ -128,19 +128,3 @@ class AddPlace : AppCompatActivity() {
 
     }
 }
-
-class TestInfo(
-    var id: Int? = 0,
-    var name: String,
-    var is_toilet: Boolean,
-    var is_elibator: Boolean,
-    var is_parking: Boolean,
-    var is_helper: Boolean,
-    var address: String,
-    var is_tuck: Boolean,
-    var description: String,
-    var latitude: String,
-    var longitude: String,
-    var star: String,
-    var author: Any? = null
-) : Serializable

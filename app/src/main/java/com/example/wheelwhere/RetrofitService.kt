@@ -1,7 +1,5 @@
 package com.example.wheelwhere
 
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -9,11 +7,11 @@ import retrofit2.http.*
 interface RetrofitService {
 
     @GET("/posts/")
-    fun getDataList(): Call<ArrayList<TestInfo>>
+    fun getDataList(): Call<ArrayList<Place>>
 
     @POST("/posts/")
     fun createData(
-        @Body rest: TestInfo
-    ): Call<TestInfo>
+        @Body rest: Place
+    ): Call<Place>
 
 }
