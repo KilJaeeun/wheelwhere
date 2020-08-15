@@ -32,12 +32,12 @@ fun main(args: Array<String>) {
     */
 
     var buff = StringBuffer()
-    File("restroom_edit.json").forEachLine { buff.append(it) }
+    File("place.json").forEachLine { buff.append(it) }
 
     val gson = Gson()
 
 
-    //println(buff)
+    println(buff)
 
     //println(raw_data)
 }
