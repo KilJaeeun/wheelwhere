@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddComment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/bg_login_button"
+        android:gravity="center"
+        android:text="후기"
+        android:textSize="40sp"></TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:hint="후기를 입력해주세요."
+        android:padding="10dp"></EditText>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#D37C7C"
+        android:text="후기 작성"
+        android:textSize="40sp"></Button>
+</LinearLayout>
