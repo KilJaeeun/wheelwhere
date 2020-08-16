@@ -16,12 +16,14 @@
         android:textSize="40sp"></TextView>
 
     <EditText
+        android:id="@+id/recieve_comment"
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:hint="후기를 입력해주세요."
         android:padding="10dp"></EditText>
 
     <Button
+        android:id="@+id/recieve_comment_btn"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="#D37C7C"

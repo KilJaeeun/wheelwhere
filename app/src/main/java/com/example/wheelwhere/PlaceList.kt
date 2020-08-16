@@ -24,12 +24,13 @@ class PlaceList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_place_list)
         NetworkTask(
-           recycler_places,
+            recycler_places,
             LayoutInflater.from(this@PlaceList),
             this@PlaceList
         ).execute()
     }
 }
+
 class NetworkTask(
     val recyclerView: RecyclerView,
     val inflater: LayoutInflater,
@@ -74,12 +75,12 @@ class PersonAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView
         val address: TextView
-        val location_id:TextView
+        val location_id: TextView
 
         init {
-            location_id= itemView.findViewById(R.id.location_id)
+            location_id = itemView.findViewById(R.id.location_id)
             name = itemView.findViewById(R.id.location_name)
-            address= itemView.findViewById(R.id.location_address)
+            address = itemView.findViewById(R.id.location_address)
 
 
             itemView.setOnClickListener {
