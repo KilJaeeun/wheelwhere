@@ -1,5 +1,7 @@
 package com.example.wheelwhere
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -27,18 +29,20 @@ class PlaceList : AppCompatActivity() {
         setContentView(R.layout.activity_place_list)
         NetworkTask(
            recycler_places,
-            LayoutInflater.from(this@PlaceList)
+            LayoutInflater.from(this@PlaceList),
+            this@PlaceList
         ).execute()
     }
 }
 class NetworkTask(
     val recyclerView: RecyclerView,
-    val inflater: LayoutInflater
+    val inflater: LayoutInflater,
+    val activity: Activity
 ) : AsyncTask<Any?, Any?, Array<LocationRegister>>() {
     override fun onPostExecute(result: Array<LocationRegister>) {
         //다른 실행함수는 서브 앱티브티에서 실행되지ㅏㄴ, 이 친구는 메인쓰레드에서  실행된다.
 
-        val adapter = PersonAdapter(result!!, inflater)
+        val adapter = PersonAdapter(result!!, inflater, activity)
         recyclerView.adapter = adapter
         //recyclerView.layoutManager = LinearLayoutManager(context)
         super.onPostExecute(result)
@@ -68,7 +72,8 @@ class NetworkTask(
 
 class PersonAdapter(
     val personList: Array<LocationRegister>,
-    val inflater: LayoutInflater
+    val inflater: LayoutInflater,
+    val activity: Activity
 ) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView
@@ -77,6 +82,16 @@ class PersonAdapter(
         init {
             name = itemView.findViewById(R.id.location_name)
             address= itemView.findViewById(R.id.location_address)
+
+
+            itemView.setOnClickListener {
+                val intent = Intent(activity, PlaceDetail::class.java)
+                intent.putExtra("name", personList.get(adapterPosition).name)
+                intent.putExtra("address", personList.get(adapterPosition).address)
+                activity.startActivity(intent)// activity 가 아니여서 startactitvtiy  를 쓸 수 없다.
+//하지만 인자에 이미 activity 가 있기 떄문에 여기서 불러올 수 있다.
+
+            }
         }
 
 

@@ -9,8 +9,54 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:background="#D8D196">
+        android:layout_height="300dp"
+        android:background="#D8D196"
+        android:orientation="vertical">
+        <LinearLayout
+            android:paddingTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:gravity="center"
+                android:textSize="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="장소명"
+                android:layout_marginRight="20dp">
+            </TextView>
+            <TextView
+                android:gravity="center"
+                android:textSize="30sp"
+                android:id="@+id/place_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="장소명리얼">
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:gravity="center"
+                android:textSize="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위치 "
+                android:layout_marginRight="20dp">
+            </TextView>
+            <TextView
+                android:gravity="center"
+                android:textSize="30sp"
+                android:id="@+id/place_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위치리얼">
+            </TextView>
+        </LinearLayout>
 
 
     </LinearLayout>
