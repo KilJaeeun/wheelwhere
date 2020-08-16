@@ -19,7 +19,7 @@ class AddPlace : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_place)
 
-        val retrofit = Retrofit.Builder().baseUrl("http://13.209.5.128")
+        val retrofit = Retrofit.Builder().baseUrl("http://3.35.90.80")
             .addConverterFactory(GsonConverterFactory.create()).build()
         val service = retrofit.create(RetrofitService::class.java)
 
