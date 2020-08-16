@@ -9,3 +9,20 @@ class Register(
     var password1: String? = null,
     var password2: String? = null
 ) : Serializable
+class LocationRegister(
+    var name: String? = null,
+    var address: String? = null,
+    var is_toilet:Boolean,
+    var is_elibator:Boolean,
+    var is_parking:Boolean,
+    var is_helper:Boolean,
+    var description: String? = null,
+    var latitude: String? = null,
+    var longitude: String? = null,
+    var star: Float? = null
+) : Serializable
+class CommentRegister(
+    var post_id: Int? = null,
+    var text: String? = null,
+    var star: Float? = null
+) : Serializable
