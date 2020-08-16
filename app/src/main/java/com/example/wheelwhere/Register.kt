@@ -10,6 +10,7 @@ class Register(
     var password2: String? = null
 ) : Serializable
 class LocationRegister(
+    var id:Int?=null,
     var name: String? = null,
     var address: String? = null,
     var is_toilet:Boolean,
@@ -22,6 +23,7 @@ class LocationRegister(
     var star: Float? = null
 ) : Serializable
 class CommentRegister(
+    var id:Int?=null,
     var post_id: Int? = null,
     var text: String? = null,
     var star: Float? = null

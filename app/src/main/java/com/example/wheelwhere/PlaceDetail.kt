@@ -13,7 +13,7 @@ class PlaceDetail : AppCompatActivity() {
 
 
     fun getPlaceInfoAndDraw() {
-
+        val post_id = intent.getStringExtra("post_id")
         val name = intent.getStringExtra("name")
         val address = intent.getStringExtra("address")
         place_name.setText(name)

@@ -78,14 +78,17 @@ class PersonAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView
         val address: TextView
+        val location_id:TextView
 
         init {
+            location_id= itemView.findViewById(R.id.location_id)
             name = itemView.findViewById(R.id.location_name)
             address= itemView.findViewById(R.id.location_address)
 
 
             itemView.setOnClickListener {
                 val intent = Intent(activity, PlaceDetail::class.java)
+                intent.putExtra("post_id", personList.get(adapterPosition).id)
                 intent.putExtra("name", personList.get(adapterPosition).name)
                 intent.putExtra("address", personList.get(adapterPosition).address)
                 activity.startActivity(intent)// activity 가 아니여서 startactitvtiy  를 쓸 수 없다.
