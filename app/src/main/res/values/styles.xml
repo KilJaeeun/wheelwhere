@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item> <!-- remove title bar (1 / 2) -->
+        <item name="windowNoTitle">true</item> <!-- remove title bar (2 / 2) -->
     </style>
 
 </resources>
