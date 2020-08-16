@@ -9,11 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatViewInflater
-import androidx.appcompat.view.menu.ActionMenuItemView
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_place_list.*
 import android.os.AsyncTask
@@ -88,7 +84,7 @@ class PersonAdapter(
 
             itemView.setOnClickListener {
                 val intent = Intent(activity, PlaceDetail::class.java)
-                intent.putExtra("post_id", personList.get(adapterPosition).id)
+                intent.putExtra("post_id", personList.get(adapterPosition).id.toString())
                 intent.putExtra("name", personList.get(adapterPosition).name)
                 intent.putExtra("address", personList.get(adapterPosition).address)
                 activity.startActivity(intent)// activity 가 아니여서 startactitvtiy  를 쓸 수 없다.
