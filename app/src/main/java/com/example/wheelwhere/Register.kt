@@ -24,7 +24,7 @@ class LocationRegister(
 ) : Serializable
 class CommentRegister(
     var id:Int?=null,
-    var post_id: Int? = null,
+    var post: Int? = null,
     var text: String? = null,
     var star: Float? = null
 ) : Serializable

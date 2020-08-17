@@ -85,7 +85,7 @@ class PersonAdapter(
 
             itemView.setOnClickListener {
                 val intent = Intent(activity, PlaceDetail::class.java)
-                intent.putExtra("post_id", personList.get(adapterPosition).id.toString())
+                intent.putExtra("post", personList.get(adapterPosition).id.toString())
                 intent.putExtra("name", personList.get(adapterPosition).name)
                 intent.putExtra("address", personList.get(adapterPosition).address)
                 activity.startActivity(intent)// activity 가 아니여서 startactitvtiy  를 쓸 수 없다.

@@ -21,7 +21,7 @@ class AddComment : AppCompatActivity() {
     }
 
     fun getCommentAndDrawServer(activity:Activity) {
-        val post_id = intent.getStringExtra("post_id")
+        val post = intent.getStringExtra("post")
         recieve_comment_btn.setOnClickListener {
             val retrofit = Retrofit.Builder().baseUrl("http://3.35.90.80")
                 .addConverterFactory(GsonConverterFactory.create()).build()
@@ -29,8 +29,8 @@ class AddComment : AppCompatActivity() {
 
             val comment: CommentRegister =
                 CommentRegister(
-                    text = recieve_comment.toString(),
-                    post_id = post_id.toInt()
+                    text = recieve_comment.text.toString(),
+                    post = post.toInt()
                 )
 
             service.createComment(comment).enqueue(object : Callback<CommentRegister> {
@@ -44,7 +44,7 @@ class AddComment : AppCompatActivity() {
                     response: Response<CommentRegister>
                 ) {
                     if (response.isSuccessful) {
-                        Toast.makeText(activity, "후기작성에 성공하였습니다. ", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, "후기작성에 성공하였습니다. "+post, Toast.LENGTH_LONG).show()
                         val rest = response.body()
                         Log.d("result!!", "uploaded !")
                     }
