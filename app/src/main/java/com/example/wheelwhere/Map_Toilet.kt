@@ -17,11 +17,12 @@ import kotlinx.android.synthetic.main.activity_map__toilet.*
 class Map_Toilet : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var locationSource: FusedLocationSource
     private lateinit var naverMap: NaverMap
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_map__toilet)
-
+        naverMap.locationTrackingMode = LocationTrackingMode.Follow // 네이버 지도 사용자 위치 추적
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayShowHomeEnabled(true)
@@ -39,6 +40,7 @@ class Map_Toilet : AppCompatActivity(), OnMapReadyCallback {
             if (!locationSource.isActivated) { // 권한 거부됨
                 naverMap.locationTrackingMode = LocationTrackingMode.None
             }
+
             return
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
