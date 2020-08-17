@@ -47,6 +47,8 @@ class AddComment : AppCompatActivity() {
                         Toast.makeText(activity, "후기작성에 성공하였습니다. "+post, Toast.LENGTH_LONG).show()
                         val rest = response.body()
                         Log.d("result!!", "uploaded !")
+                        //뒤로가기
+                        onBackPressed()
                     }
                 }
             })
