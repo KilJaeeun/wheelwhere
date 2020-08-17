@@ -14,4 +14,12 @@ interface RetrofitService {
         @Body rest: Place
     ): Call<Place>
 
+    @GET("/comments/")
+    fun getComments(): Call<ArrayList<CommentRegister>>
+
+    @POST("/comments/")
+    fun createComment(
+        @Body rest: CommentRegister
+    ): Call<CommentRegister>
+
 }
