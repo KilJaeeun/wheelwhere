@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="120dp"
+    >
+
+    <LinearLayout
+        android:background="@color/bg_login_button_highlighted"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        ></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:text="후기"
+            android:gravity="center"
+            android:textSize="40sp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            ></TextView>
+        <TextView
+            android:id="@+id/comment_item"
+            android:text="모기가 많아서 아팠어요. "
+            android:gravity="center"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/bg_login_button_highlighted"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        ></LinearLayout>
+</LinearLayout>
