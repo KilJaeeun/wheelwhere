@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">T-map</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_list">List</string>
+    <string name="title_option">Option</string>
+
+    <!-- Sign In -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="signin_email">회원가입 및 이메일 로그인</string>
+    <string name="signin_google">구글로 로그인</string>
+    <string name="signin_facebook">페이스북으로 로그인</string>
+    <string name="signup_complete">회원가입 성공</string>
+    <string name="signin_complete">로그인 성공</string>
+    <string name="signout">로그아웃</string>
+    <string name="signout_success">로그아웃 성공</string>
+    <string name="signout_fail">로그아웃 실패</string>
+    <string name="signout_fail_null">이메일과 비밀번호를 입력해주세요</string>
+    <string name="kakao_app_key">86890c750a162c5756a798f6ca320c30</string>
+    <string name="naver_client_id">7htfbvvjqn</string>
+    <string name="facebook_app_id">626283284930251</string>
+    <string name="fb_login_protocol_scheme">fb626283284930251</string>
+</resources>

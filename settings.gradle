@@ -1,0 +1,2 @@
+rootProject.name='Kotlin_Tmap'
+include ':app', ':com.skt.Tmap_1.64'
