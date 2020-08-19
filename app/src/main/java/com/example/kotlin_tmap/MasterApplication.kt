@@ -1,6 +1,8 @@
 package com.example.kotlin_tmap
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import android.content.Context
 import com.facebook.stetho.Stetho
 import com.facebook.stetho.okhttp3.StethoInterceptor

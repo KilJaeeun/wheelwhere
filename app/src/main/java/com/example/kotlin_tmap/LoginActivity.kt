@@ -3,8 +3,7 @@ package com.example.kotlin_tmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+
 import android.util.Log
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -66,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
         val account = GoogleSignIn.getLastSignedInAccount(this)
         if (account !== null) { // 이미 로그인 되어있을시 바로 메인 액티비티로 이동
             toMainActivity(firebaseAuth.currentUser)
-            startActivity(Intent(this@LoginActivity, Map_Toilet::class.java))
+            startActivity(Intent(this@LoginActivity, PlaceList::class.java))
 
         }
     } //onStart End
@@ -86,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Log.w("LoginActivity", "firebaseAuthWithGoogle 성공", task.exception)
                     toMainActivity(firebaseAuth?.currentUser)
-                    startActivity(Intent(this@LoginActivity, Map_Toilet::class.java))
+                    startActivity(Intent(this@LoginActivity, PlaceList::class.java))
 
                 } else {
                     Log.w("LoginActivity", "firebaseAuthWithGoogle 실패", task.exception)
@@ -107,7 +106,7 @@ class LoginActivity : AppCompatActivity() {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("MainActivity", "signInWithCredential:success")
 
-                        startActivity(Intent(this@LoginActivity, Map_Toilet::class.java))
+                        startActivity(Intent(this@LoginActivity, PlaceList::class.java))
 
                     } else {
                         // If sign in fails, display a message to the user.

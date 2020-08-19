@@ -43,7 +43,7 @@ class HomePresenter(val context: Context,
     override fun loadMap(mapView : TMapView) {
         view.showLoading()
         mapView.run {
-            setSKTMapApiKey("l7xx018af8f0f00743e8ac9cc583dcbf19d4")
+            setSKTMapApiKey("l7xxb06b75b17d194ea8adcb83bfec85c97c")
             zoomLevel = 15
             mapType = TMapView.MAPTYPE_STANDARD
             setLanguage(TMapView.LANGUAGE_KOREAN)

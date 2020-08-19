@@ -35,7 +35,7 @@ class SearchPOI : AppCompatActivity() {
 
 
         //Tmap을 APIkey로 사용하기 위한 설정
-        poiMap.setSKTMapApiKey("l7xx018af8f0f00743e8ac9cc583dcbf19d4")
+        poiMap.setSKTMapApiKey("l7xxb06b75b17d194ea8adcb83bfec85c97c")
         poiMap.zoomLevel = 15
         poiMap.mapType = TMapView.MAPTYPE_STANDARD
         poiMap.setLanguage(TMapView.LANGUAGE_KOREAN)

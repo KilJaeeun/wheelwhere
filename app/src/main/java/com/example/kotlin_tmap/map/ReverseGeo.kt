@@ -33,7 +33,7 @@ class ReverseGeo : AppCompatActivity() {
         setContentView(R.layout.activity_reverse_geo)
 
         //Tmap을 APIkey로 사용하기 위한 설정
-        geoMap.setSKTMapApiKey("l7xx018af8f0f00743e8ac9cc583dcbf19d4")
+        geoMap.setSKTMapApiKey("l7xxb06b75b17d194ea8adcb83bfec85c97c")
         geoMap.zoomLevel = 15
         geoMap.mapType = TMapView.MAPTYPE_STANDARD
         geoMap.setLanguage(TMapView.LANGUAGE_KOREAN)

@@ -35,7 +35,7 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
         permission.checkPermission(this)
 
         //Tmap을 APIkey로 사용하기 위한 설정
-        tmapview.setSKTMapApiKey("l7xx018af8f0f00743e8ac9cc583dcbf19d4")
+        tmapview.setSKTMapApiKey("l7xxb06b75b17d194ea8adcb83bfec85c97c")
         tmapview.zoomLevel = 15
         tmapview.mapType = TMapView.MAPTYPE_STANDARD
         tmapview.setLanguage(TMapView.LANGUAGE_KOREAN)
