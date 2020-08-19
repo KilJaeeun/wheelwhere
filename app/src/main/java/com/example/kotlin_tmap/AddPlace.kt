@@ -90,15 +90,15 @@ class AddPlace : AppCompatActivity() {
             val rest: Place =
                 Place(
                     name = name,
-                    is_toilet = restFlag,
-                    is_parking = parkFlag,
-                    is_elibator = elvFlag,
                     is_helper = helpFlag,
-                    address = address,
+                    is_parking = parkFlag,
                     is_tuck = false,
+                    is_elibator = elvFlag,
+                    is_toilet = restFlag,
                     description = "null",
                     latitude = "38",
                     longitude = "126",
+                    address = address,
                     star = "1"
                 )
 
