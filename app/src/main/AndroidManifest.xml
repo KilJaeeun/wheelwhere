@@ -16,36 +16,27 @@
         android:roundIcon="@mipmap/ic_tmap_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".PlaceList"></activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main">
-
-
-        </activity>
-
-        <activity android:name=".PlaceList" />
+            android:label="@string/title_activity_main"></activity>
         <activity
             android:name=".MasterApplication"
             tools:ignore="Instantiatable" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".AddPlace" />
-        <activity android:name=".AddComment" />
-
-<<<<<<< HEAD
-        <activity android:name=".MainActivity">
-
-=======
+        <activity android:name=".AddComment" /> <!-- <<<<<<< HEAD -->
+        <!-- ======= -->
         <activity android:name=".map.SearchPOI" />
         <activity android:name=".map.ReverseGeo" />
         <activity android:name=".map.RouteInfo" />
         <activity android:name=".map.MapExample">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
->>>>>>> fa357b44dd273e385d903f0de7a02b5676191489
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- >>>>>>> fa357b44dd273e385d903f0de7a02b5676191489 -->
         </activity>
     </application>
 
