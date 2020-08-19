@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddPlace">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <ImageView
+            android:id="@+id/back_of_add"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="2"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            android:paddingLeft="45dp"
+            android:text="장소 추가"
+            android:textColor="#000000"
+            android:textSize="35dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:text="이름"
+            android:textColor="#000000"
+            android:textSize="35dp" />
+
+        <EditText
+            android:id="@+id/new_name_add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="8"
+            android:background="@drawable/basic_background"
+            android:bufferType="normal"
+            android:gravity="center"
+            android:hint="건물 이름을 입력해주세요." />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:text="위치"
+            android:textColor="#000000"
+            android:textSize="35dp" />
+
+        <EditText
+            android:id="@+id/new_address_add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="8"
+            android:background="@drawable/basic_background"
+            android:bufferType="normal"
+            android:gravity="center"
+            android:hint="건물 위치를 입력해주세요." />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:text="전화"
+            android:textColor="#000000"
+            android:textSize="35dp" />
+
+        <EditText
+            android:id="@+id/new_number_add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="8"
+            android:background="@drawable/basic_background"
+            android:bufferType="normal"
+            android:gravity="center"
+            android:hint="전화번호를 입력해주세요." />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:weightSum="8">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@drawable/basic_background">
+
+            <Button
+                android:id="@+id/isRest_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ffffff"
+                android:gravity="center"
+                android:text="화장실"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@drawable/basic_background">
+
+            <Button
+                android:id="@+id/isPark_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ffffff"
+                android:gravity="center"
+                android:text="주차장"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@drawable/basic_background">
+
+            <Button
+                android:id="@+id/isEle_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ffffff"
+                android:gravity="center"
+                android:text="엘리베이터"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@drawable/basic_background">
+
+            <Button
+                android:id="@+id/isHelper_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ffffff"
+                android:gravity="center"
+                android:text="도우미"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/submit_add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/basic_background"
+            android:text="작성하기"
+            android:textSize="35dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

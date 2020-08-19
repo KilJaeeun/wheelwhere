@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".map_MapExample">
+
+    <Button
+        android:id="@+id/btnMove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="경복궁으로 이동"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonZoomIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="확대"></Button>
+        <Button
+            android:id="@+id/buttonZoomOut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="축소"></Button>
+        <Button
+            android:id="@+id/buttonZoomLevel10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="ZoomLevel=10"></Button>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnMyLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="내 위치로 이동"/>
+
+    <LinearLayout
+        android:id="@+id/mapLinear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
