@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿# Kotlin_Tmap
 
 ## DAY1   
@@ -23,3 +24,7 @@
 <img width="200" src="https://user-images.githubusercontent.com/55985789/79758824-dc069100-8358-11ea-91b5-e176a2d9fb1c.jpg">
 </div>
 
+=======
+# tmapwheel
+using tmap
+>>>>>>> 8aaaf84aa8e23f3e9a252c0e2a900fe5c87bbcd1
