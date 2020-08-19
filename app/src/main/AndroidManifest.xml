@@ -54,7 +54,9 @@
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="@string/naver_client_id" />
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
