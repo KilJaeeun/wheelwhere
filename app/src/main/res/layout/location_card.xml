@@ -23,11 +23,11 @@
             android:id="@+id/location_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:lineHeight="22dp"
+            android:layout_marginRight="104dp"
             android:gravity="center"
+            android:lineHeight="22dp"
             android:lineSpacingExtra="-0.42dp"
             android:text="오어사"
-            android:layout_marginRight="104dp"
             android:textSize="17dp"
 
             ></TextView>
@@ -76,8 +76,8 @@
 
             <ImageView
 
-                android:layout_width="9dp"
-                android:layout_height="14dp"
+                android:layout_width="9.96dp"
+                android:layout_height="14.85dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/ic_location_icon"></ImageView>
 
@@ -85,13 +85,12 @@
                 android:id="@+id/location_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:lineHeight="14dp"
                 android:lineSpacingExtra="-0.25dp"
                 android:text="경북 포항시 남구 오천읍 항사리 산28-14"
                 android:textColor="@color/greytext"
-                android:textSize="10dp"
-
-                ></TextView>
+                android:textSize="12dp"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -128,8 +127,8 @@
         <TextView
             android:layout_width="72.6sp"
             android:layout_height="21.63dp"
-            android:layout_marginRight="2dp"
-            android:background="@drawable/button_border"
+            android:layout_marginRight="3.4dp"
+            android:background="@drawable/item_rectangle"
             android:gravity="center"
             android:text="장애인 화장실"
             android:textSize="10dp"></TextView>
@@ -137,8 +136,8 @@
         <TextView
             android:layout_width="47sp"
             android:layout_height="21.63dp"
-            android:layout_marginRight="2dp"
-            android:background="@drawable/button_border"
+            android:layout_marginRight="4.65dp"
+            android:background="@drawable/item_rectangle"
             android:gravity="center"
             android:text="주차장"
             android:textSize="10dp"></TextView>
@@ -146,8 +145,8 @@
         <TextView
             android:layout_width="63sp"
             android:layout_height="21.63dp"
-            android:layout_marginRight="2dp"
-            android:background="@drawable/button_border"
+            android:layout_marginRight="4.65dp"
+            android:background="@drawable/item_rectangle"
             android:gravity="center"
             android:text="엘리베이터"
             android:textSize="10dp"></TextView>
@@ -155,8 +154,8 @@
         <TextView
             android:layout_width="47sp"
             android:layout_height="21.63dp"
-            android:layout_marginRight="2dp"
-            android:background="@drawable/button_border"
+            android:layout_marginRight="7.58dp"
+            android:background="@drawable/item_rectangle"
             android:gravity="center"
             android:text="도우미"
             android:textSize="10dp"></TextView>

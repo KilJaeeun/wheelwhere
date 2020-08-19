@@ -3,14 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#000000"
-    tools:context=".MainActivity">
-=======
     android:background="@color/black"
-    >
->>>>>>> fa357b44dd273e385d903f0de7a02b5676191489
+    tools:context=".MainActivity">
+
+
 
 
     <FrameLayout

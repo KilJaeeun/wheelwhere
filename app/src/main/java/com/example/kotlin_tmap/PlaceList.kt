@@ -100,7 +100,7 @@ class PersonAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = inflater.inflate(R.layout.location_list_item, parent, false)
+        val view = inflater.inflate(R.layout.place_item, parent, false)
         return ViewHolder(view)
     }
 
