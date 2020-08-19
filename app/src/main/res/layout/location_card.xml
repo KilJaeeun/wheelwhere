@@ -22,13 +22,41 @@
         <TextView
             android:id="@+id/location_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:lineHeight="22dp"
+            android:gravity="center"
             android:lineSpacingExtra="-0.42dp"
             android:text="오어사"
+            android:layout_marginRight="104dp"
             android:textSize="17dp"
 
             ></TextView>
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="27dp"
+            android:background="@drawable/empty_star"></ImageView>
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="27dp"
+            android:background="@drawable/empty_star"></ImageView>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="27dp"
+            android:background="@drawable/empty_star"></ImageView>
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="27dp"
+            android:background="@drawable/empty_star"></ImageView>
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="27dp"
+            android:background="@drawable/empty_star"></ImageView>
+
     </LinearLayout>
 
     <LinearLayout
@@ -51,7 +79,7 @@
                 android:layout_width="9dp"
                 android:layout_height="14dp"
                 android:layout_marginRight="5dp"
-               android:background="@drawable/ic_location_icon"></ImageView>
+                android:background="@drawable/ic_location_icon"></ImageView>
 
             <TextView
                 android:id="@+id/location_address"
