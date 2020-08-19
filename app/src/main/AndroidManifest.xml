@@ -16,14 +16,10 @@
         android:roundIcon="@mipmap/ic_tmap_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Loading"></activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main">
-
-
-        </activity>
-
+            android:label="@string/title_activity_main"></activity>
         <activity android:name=".PlaceList" />
         <activity
             android:name=".MasterApplication"
@@ -31,16 +27,15 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".AddPlace" />
         <activity android:name=".AddComment" />
-
         <activity android:name=".map.SearchPOI" />
         <activity android:name=".map.ReverseGeo" />
         <activity android:name=".map.RouteInfo" />
         <activity android:name=".map.MapExample">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
