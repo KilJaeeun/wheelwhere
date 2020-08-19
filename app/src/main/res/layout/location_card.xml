@@ -34,8 +34,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginBottom="23dp"
+        android:orientation="vertical"
 
         >
 
@@ -45,11 +45,13 @@
             android:orientation="horizontal"
 
             >
-<!--<ImageView-->
-<!--    android:layout_width="9dp"-->
-<!--    android:layout_height="14dp"-->
-<!--&lt;!&ndash;    android:src="@drawable/"&ndash;&gt;-->
-<!--    ></ImageView>-->
+
+            <ImageView
+
+                android:layout_width="9dp"
+                android:layout_height="14dp"
+                android:layout_marginRight="5dp"
+               android:background="@drawable/ic_location_icon"></ImageView>
 
             <TextView
                 android:id="@+id/location_address"
@@ -68,6 +70,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <ImageView
+
+                android:layout_width="15dp"
+                android:layout_height="14dp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/ic_call_icon"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -91,34 +100,37 @@
         <TextView
             android:layout_width="72.6sp"
             android:layout_height="21.63dp"
+            android:layout_marginRight="2dp"
             android:background="@drawable/button_border"
             android:gravity="center"
             android:text="장애인 화장실"
-            android:layout_marginRight="2dp"
             android:textSize="10dp"></TextView>
+
         <TextView
             android:layout_width="47sp"
             android:layout_height="21.63dp"
+            android:layout_marginRight="2dp"
             android:background="@drawable/button_border"
             android:gravity="center"
             android:text="주차장"
-            android:layout_marginRight="2dp"
             android:textSize="10dp"></TextView>
+
         <TextView
             android:layout_width="63sp"
             android:layout_height="21.63dp"
+            android:layout_marginRight="2dp"
             android:background="@drawable/button_border"
             android:gravity="center"
             android:text="엘리베이터"
-            android:layout_marginRight="2dp"
             android:textSize="10dp"></TextView>
+
         <TextView
             android:layout_width="47sp"
             android:layout_height="21.63dp"
+            android:layout_marginRight="2dp"
             android:background="@drawable/button_border"
             android:gravity="center"
             android:text="도우미"
-            android:layout_marginRight="2dp"
             android:textSize="10dp"></TextView>
 
     </LinearLayout>
