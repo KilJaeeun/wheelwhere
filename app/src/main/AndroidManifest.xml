@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_tmap_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MyPage"></activity>
+        <activity android:name=".AddPlace" />
+        <activity android:name=".MyPage" />
         <activity android:name=".Loading" />
         <activity
             android:name=".MainActivity"
@@ -26,7 +27,6 @@
             android:name=".MasterApplication"
             tools:ignore="Instantiatable" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".AddPlace" />
         <activity android:name=".AddComment" />
         <activity android:name=".map.SearchPOI" />
         <activity android:name=".map.ReverseGeo" />

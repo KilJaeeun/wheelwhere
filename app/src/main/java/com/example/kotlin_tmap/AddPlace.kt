@@ -11,7 +11,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.io.Serializable
+
 class AddPlace : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +40,7 @@ class AddPlace : AppCompatActivity() {
                     Log.d("result!!", "id : " + dataList?.get(0)?.id)
                     Log.d("result!!", "name : " + dataList?.get(0)?.name)
                     Log.d("result!!", "is_toilet : " + dataList?.get(0)?.is_toilet)
-                    Log.d("result!!", "is_elibator : " + dataList?.get(0)?.is_elibator)
+                    Log.d("result!!", "is_elevator : " + dataList?.get(0)?.is_elevator)
                     Log.d("result!!", "is_parking : " + dataList?.get(0)?.is_parking)
                     Log.d("result!!", "is_helper : " + dataList?.get(0)?.is_helper)
                     Log.d("result!!", "address : " + dataList?.get(0)?.address)
@@ -84,16 +84,17 @@ class AddPlace : AppCompatActivity() {
             val name: String = edt1.text.toString()
             val edt2 = findViewById<EditText>(R.id.new_address_add) as EditText
             val address: String = edt2.text.toString()
-            //val edt3 = findViewById<EditText>(R.id.new_number_add) as EditText
-            //val number: String = edt3.text.toString()
+            val edt3 = findViewById<EditText>(R.id.new_number_add) as EditText
+            val phone: String = edt3.text.toString()
 
             val rest: Place =
                 Place(
                     name = name,
+                    phone = phone,
                     is_helper = helpFlag,
                     is_parking = parkFlag,
                     is_tuck = false,
-                    is_elibator = elvFlag,
+                    is_elevator = elvFlag,
                     is_toilet = restFlag,
                     description = "null",
                     latitude = "38",
@@ -106,7 +107,7 @@ class AddPlace : AppCompatActivity() {
             Log.d("result!!", "address : " + rest.address)
             Log.d("result!!", "restFlag : " + rest.is_toilet)
             Log.d("result!!", "parkFlag : " + rest.is_parking)
-            Log.d("result!!", "elvFlag : " + rest.is_elibator)
+            Log.d("result!!", "elvFlag : " + rest.is_elevator)
             Log.d("result!!", "helpFlag : " + rest.is_helper)
 
             service.createData(rest).enqueue(object : Callback<Place> {

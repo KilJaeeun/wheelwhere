@@ -8,10 +8,11 @@ import java.io.Serializable
 class Place(
     var id: Int? = 0,
     var name: String,
+    var phone:String,
     var is_helper: Boolean = false,
     var is_parking: Boolean = false,
     var is_tuck: Boolean = false,
-    var is_elibator: Boolean = false,
+    var is_elevator: Boolean = false,
     var is_toilet: Boolean = false,
     var description: String,
     var latitude: String,

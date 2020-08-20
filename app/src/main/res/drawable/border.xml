@@ -16,6 +16,7 @@
         android:top="0dp">
         <shape android:shape="rectangle">
             <solid android:color="#FFFFFF" />
+            <corners android:radius="17dp" />
         </shape>
     </item>
 </layer-list>

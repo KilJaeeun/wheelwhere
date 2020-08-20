@@ -1,15 +1,11 @@
 package com.example.kotlin_tmap.map
 
-import android.content.pm.PackageManager
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.location.Location
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
+import com.example.kotlin_tmap.AddPlace
 import com.example.kotlin_tmap.R
 import com.example.kotlin_tmap.base.App
 import com.example.kotlin_tmap.util.permission
@@ -19,6 +15,7 @@ import com.skt.Tmap.TMapPoint
 import com.skt.Tmap.TMapView
 import kotlinx.android.synthetic.main.activity_map_example.*
 
+
 class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback {
 
     val context = App.instance.context()
@@ -26,7 +23,7 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
 
 
     //퍼미션 사용
-    private lateinit var permission : permission
+    private lateinit var permission: permission
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map_example)
@@ -49,7 +46,8 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
 
 
         val markerItem = TMapMarkerItem()
-        val bitmapIcon = BitmapFactory.decodeResource(applicationContext.resources,
+        val bitmapIcon = BitmapFactory.decodeResource(
+            applicationContext.resources,
             R.drawable.boxicon
         )
         val tMapPoint = TMapPoint(37.579600, 126.976998)
@@ -60,7 +58,7 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
             markerItem.tMapPoint = tMapPoint
             markerItem.name = "경복궁"
             tmapview.addMarkerItem("markerItem", markerItem)
-            tmapview.setCenterPoint(126.976998,37.579600,true)
+            tmapview.setCenterPoint(126.976998, 37.579600, true)
         }
 
         buttonZoomIn.setOnClickListener {
@@ -93,12 +91,21 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
             tmapview.setSightVisible(true)
         }
 
+        list_button.setOnClickListener {
+            val intent = Intent(this, AddPlace::class.java)
+            startActivity(intent)
+        }
+
     }
 
 
     //권한 요청 결과 함수
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        permission.handlePermissionsResult(requestCode,permissions, grantResults)
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        permission.handlePermissionsResult(requestCode, permissions, grantResults)
     }
 
 
