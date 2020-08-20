@@ -16,16 +16,16 @@
         <activity android:name=".AddComment"></activity>
         <activity android:name=".PlaceDetail" />
         <activity android:name=".PlaceList">
-
-        </activity>
-        <activity android:name=".AddPlace" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".Map_Toilet">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".AddPlace" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".Map_Toilet">
+
         </activity>
 
         <meta-data
