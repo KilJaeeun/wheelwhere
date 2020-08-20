@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/btnRoute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SKT타워부터 종각역까지"/>
+
+    <TextView
+        android:id="@+id/tvDistance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="거리가 표시될 부분"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+    <Button
+        android:id="@+id/btnMyLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="내 위치로 이동"/>
+
+
+    <LinearLayout
+        android:id="@+id/routeMapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="horizontal">
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
