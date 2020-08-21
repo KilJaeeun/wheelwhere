@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="141.24dp"
             android:layout_marginTop="18.92dp"
+            android:fontFamily="@font/notosanscjkkr_bold"
             android:text="장소 추가"
             android:textColor="#000000"
             android:textSize="17dp" />
@@ -47,6 +48,8 @@
             android:layout_width="wrap_content"
             android:layout_height="15dp"
             android:layout_marginTop="-10dp"
+            android:fontFamily="@font/notosanscjkkr_light"
+
             android:text="이름"
             android:textColor="#8F8F8F"
             android:textSize="12dp" />
@@ -77,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="15dp"
             android:layout_marginTop="-10dp"
+            android:fontFamily="@font/notosanscjkkr_light"
             android:text="위치"
             android:textColor="#8F8F8F"
             android:textSize="12dp" />
@@ -107,6 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="15dp"
             android:layout_marginTop="-10dp"
+            android:fontFamily="@font/notosanscjkkr_light"
             android:text="연락처"
             android:textColor="#8F8F8F"
             android:textSize="12dp" />
@@ -131,6 +136,7 @@
         android:layout_height="15dp"
         android:layout_marginLeft="77.5dp"
         android:layout_marginTop="30.96dp"
+        android:fontFamily="@font/notosanscjkkr_light"
         android:text="시설 여부"
         android:textSize="12dp" />
 
@@ -153,6 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#00ffffff"
+                android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
                 android:text="장애인 화장실"
                 android:textSize="11dp" />
@@ -170,6 +177,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#00ffffff"
+                android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
                 android:text="주차장"
                 android:textSize="11dp" />
@@ -188,6 +196,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#00ffffff"
+                android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
                 android:text="엘리베이터"
                 android:textSize="11dp" />
@@ -207,6 +216,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#00ffffff"
+                android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
                 android:text="도우미"
                 android:textSize="11dp" />
@@ -219,9 +229,10 @@
         android:id="@+id/submit_add"
         android:layout_width="80.57dp"
         android:layout_height="34.46dp"
-        android:layout_marginTop="68.96dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="68.96dp"
         android:background="@drawable/btn_sbm"
+        android:fontFamily="@font/notosanscjkkr_medium"
         android:text="완료"
         android:textColor="#FFFFFF"
         android:textSize="16dp" />

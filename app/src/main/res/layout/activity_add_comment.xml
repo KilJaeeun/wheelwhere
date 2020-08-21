@@ -15,6 +15,8 @@
         android:lineHeight="22sp"
         android:lineSpacingExtra="-0.42sp"
         android:text="후기 작성"
+        android:fontFamily="@font/notosanscjkkr_bold"
+
         android:textColor="#000000"
         android:textSize="17sp"></TextView>
 
@@ -37,6 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:hint="후기를 입력해주세요."
+        android:fontFamily="@font/notosanscjkkr_light"
+
         android:padding="10dp"
         android:textColorHint="@color/greytext"></EditText>
     <LinearLayout
@@ -70,5 +74,7 @@
 
         android:background="@drawable/black_btn_radius"
         android:text="완료"
+        android:fontFamily="@font/notosanscjkkr_medium"
+
         android:textSize="16sp"></Button>
 </LinearLayout>

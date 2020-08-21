@@ -24,10 +24,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="104dp"
+            android:fontFamily="@font/notosanscjkkr_bold"
             android:gravity="center"
             android:lineHeight="22dp"
             android:lineSpacingExtra="-0.42dp"
             android:text="오어사"
+
             android:textSize="17dp"
 
             ></TextView>
@@ -85,10 +87,12 @@
                 android:id="@+id/location_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_regular"
                 android:gravity="center_vertical"
                 android:lineHeight="14dp"
                 android:lineSpacingExtra="-0.25dp"
                 android:text="경북 포항시 남구 오천읍 항사리 산28-14"
+
                 android:textColor="@color/greytext"
                 android:textSize="12dp"></TextView>
         </LinearLayout>
@@ -108,6 +112,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_regular"
                 android:lineHeight="14dp"
                 android:lineSpacingExtra="-0.25dp"
                 android:text="010-4586-2242"
@@ -129,6 +134,7 @@
             android:layout_height="21.63dp"
             android:layout_marginRight="3.4dp"
             android:background="@drawable/item_rectangle"
+            android:fontFamily="@font/notosanscjkkr_medium"
             android:gravity="center"
             android:text="장애인 화장실"
             android:textSize="10dp"></TextView>
@@ -138,6 +144,7 @@
             android:layout_height="21.63dp"
             android:layout_marginRight="4.65dp"
             android:background="@drawable/item_rectangle"
+            android:fontFamily="@font/notosanscjkkr_medium"
             android:gravity="center"
             android:text="주차장"
             android:textSize="10dp"></TextView>
@@ -147,6 +154,7 @@
             android:layout_height="21.63dp"
             android:layout_marginRight="4.65dp"
             android:background="@drawable/item_rectangle"
+            android:fontFamily="@font/notosanscjkkr_medium"
             android:gravity="center"
             android:text="엘리베이터"
             android:textSize="10dp"></TextView>
