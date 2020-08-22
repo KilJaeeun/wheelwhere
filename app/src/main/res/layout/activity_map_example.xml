@@ -51,6 +51,11 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/add_button"
+            android:layout_width="24.41dp"
+            android:layout_height="25.1dp"/>
+
+        <Button
             android:id="@+id/list_button"
             android:layout_width="24.41dp"
             android:layout_height="25.1dp"/>

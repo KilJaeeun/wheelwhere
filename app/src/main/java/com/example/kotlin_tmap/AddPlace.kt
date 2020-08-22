@@ -26,34 +26,9 @@ class AddPlace : AppCompatActivity() {
         var elvFlag: Boolean = false
         var helpFlag: Boolean = false
 
-        service.getDataList().enqueue(object : Callback<ArrayList<Place>> {
-            override fun onFailure(call: Call<ArrayList<Place>>, t: Throwable) {
-                Log.d("result!!", "Error (getting data)!")
-            }
-
-            override fun onResponse(
-                call: Call<ArrayList<Place>>,
-                response: Response<ArrayList<Place>>
-            ) {
-                if (response.isSuccessful) {
-                    val dataList = response.body()
-                    Log.d("result!!", "id : " + dataList?.get(0)?.id)
-                    Log.d("result!!", "name : " + dataList?.get(0)?.name)
-                    Log.d("result!!", "is_toilet : " + dataList?.get(0)?.is_toilet)
-                    Log.d("result!!", "is_elevator : " + dataList?.get(0)?.is_elevator)
-                    Log.d("result!!", "is_parking : " + dataList?.get(0)?.is_parking)
-                    Log.d("result!!", "is_helper : " + dataList?.get(0)?.is_helper)
-                    Log.d("result!!", "address : " + dataList?.get(0)?.address)
-                    Log.d("result!!", "is_tuck : " + dataList?.get(0)?.is_tuck)
-                    Log.d("result!!", "description : " + dataList?.get(0)?.description)
-                    Log.d("result!!", "latitude : " + dataList?.get(0)?.latitude)
-                    Log.d("result!!", "longitude : " + dataList?.get(0)?.longitude)
-                    Log.d("result!!", "star : " + dataList?.get(0)?.star)
-                    Log.d("result!!", "author : " + dataList?.get(0)?.author)
-                }
-            }
-        })
-
+        back_of_add.setOnClickListener{
+            onBackPressed()
+        }
 
         isRest_add.setOnClickListener {
             if (restFlag == false) it.isSelected = true

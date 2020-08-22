@@ -6,6 +6,7 @@ import android.location.Location
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlin_tmap.AddPlace
+import com.example.kotlin_tmap.PlaceList
 import com.example.kotlin_tmap.R
 import com.example.kotlin_tmap.base.App
 import com.example.kotlin_tmap.util.permission
@@ -91,8 +92,13 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
             tmapview.setSightVisible(true)
         }
 
-        list_button.setOnClickListener {
+        add_button.setOnClickListener {
             val intent = Intent(this, AddPlace::class.java)
+            startActivity(intent)
+        }
+
+        list_button.setOnClickListener {
+            val intent = Intent(this, PlaceList::class.java)
             startActivity(intent)
         }
 
