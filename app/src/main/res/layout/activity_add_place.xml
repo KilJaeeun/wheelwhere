@@ -160,17 +160,17 @@
         <LinearLayout
             android:layout_width="77.34dp"
             android:layout_height="23.04dp"
-            android:layout_marginTop="3.08dp"
-            android:background="@drawable/btn_loo">
+            android:layout_marginTop="3.08dp">
 
             <Button
                 android:id="@+id/isRest_add"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#00ffffff"
+                android:background="@drawable/btn_loo"
                 android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
                 android:text="장애인 화장실"
+                android:textColor="@drawable/selector"
                 android:textSize="11dp" />
         </LinearLayout>
 
@@ -178,17 +178,17 @@
             android:layout_width="50.44dp"
             android:layout_height="23.04dp"
             android:layout_marginLeft="3.66dp"
-            android:layout_marginTop="3.08dp"
-            android:background="@drawable/btn_pl">
+            android:layout_marginTop="3.08dp">
 
             <Button
                 android:id="@+id/isPark_add"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#00ffffff"
+                android:background="@drawable/btn_pl"
                 android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
                 android:text="주차장"
+                android:textColor="@drawable/selector"
                 android:textSize="11dp" />
         </LinearLayout>
 
@@ -197,17 +197,17 @@
             android:layout_width="67.56dp"
             android:layout_height="23.04dp"
             android:layout_marginLeft="4.56dp"
-            android:layout_marginTop="3.08dp"
-            android:background="@drawable/btn_elv">
+            android:layout_marginTop="3.08dp">
 
             <Button
                 android:id="@+id/isEle_add"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#00ffffff"
+                android:background="@drawable/btn_elv"
                 android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
                 android:text="엘리베이터"
+                android:textColor="@drawable/selector"
                 android:textSize="11dp" />
 
         </LinearLayout>
@@ -217,17 +217,17 @@
             android:layout_width="50.44dp"
             android:layout_height="23.04dp"
             android:layout_marginLeft="8.44dp"
-            android:layout_marginTop="3.08dp"
-            android:background="@drawable/btn_helper">
+            android:layout_marginTop="3.08dp">
 
             <Button
                 android:id="@+id/isHelper_add"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#00ffffff"
+                android:background="@drawable/btn_helper"
                 android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
                 android:text="도우미"
+                android:textColor="@drawable/selector"
                 android:textSize="11dp" />
 
         </LinearLayout>

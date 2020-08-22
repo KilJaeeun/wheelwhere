@@ -56,26 +56,26 @@ class AddPlace : AppCompatActivity() {
 
 
         isRest_add.setOnClickListener {
-            if (restFlag == false) it.setBackgroundColor(Color.rgb(255, 165, 0))
-            else it.setBackgroundColor(Color.TRANSPARENT)
+            if (restFlag == false) it.isSelected = true
+            else it.isSelected = false
             restFlag = !restFlag
         }
 
         isPark_add.setOnClickListener {
-            if (parkFlag == false) it.setBackgroundColor(Color.rgb(255, 165, 0))
-            else it.setBackgroundColor(Color.TRANSPARENT)
+            if (parkFlag == false) it.isSelected = true
+            else it.isSelected = false
             parkFlag = !parkFlag
         }
 
         isEle_add.setOnClickListener {
-            if (elvFlag == false) it.setBackgroundColor(Color.rgb(255, 165, 0))
-            else it.setBackgroundColor(Color.TRANSPARENT)
+            if (elvFlag == false) it.isSelected = true
+            else it.isSelected = false
             elvFlag = !elvFlag
         }
 
         isHelper_add.setOnClickListener {
-            if (helpFlag == false) it.setBackgroundColor(Color.rgb(255, 165, 0))
-            else it.setBackgroundColor(Color.TRANSPARENT)
+            if (helpFlag == false) it.isSelected = true
+            else it.isSelected = false
             helpFlag = !helpFlag
         }
 
