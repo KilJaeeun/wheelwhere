@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_place_list.*
 import android.os.AsyncTask
 import com.google.gson.Gson
+import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,6 +34,8 @@ class PlaceList : AppCompatActivity() {
         val retrofit = Retrofit.Builder().baseUrl("http://3.35.90.80")
             .addConverterFactory(GsonConverterFactory.create()).build()
         val service = retrofit.create(RetrofitService::class.java)
+
+        var placeRecyclerAdapter: PlaceRecylerAdapter
 /*
         NetworkTask(
             recycler_places,
@@ -64,12 +67,63 @@ class PlaceList : AppCompatActivity() {
                     Log.d("result!!", "longitude : " + dataList?.get(0)?.longitude)
                     Log.d("result!!", "star : " + dataList?.get(0)?.star)
                     Log.d("result!!", "author : " + dataList?.get(0)?.author)
+                    Log.d("result!!", "len : " + dataList?.size)
+                    var temp_list = Places()
+                    for (d in dataList!!) {
+                        temp_list.addPlace(d)
+                    }
+                    placeRecyclerAdapter = PlaceRecylerAdapter(
+                        temp_list,
+                        LayoutInflater.from(this@PlaceList),
+                        this@PlaceList
+                    )
+                    Log.d("result!!", "len : " + temp_list.place_list.size)
                 }
             }
         })
 
     }
 }
+
+class PlaceRecylerAdapter(
+    val placeList: Places,
+    val inflater: LayoutInflater,
+    val activity: Activity
+) : RecyclerView.Adapter<PlaceRecylerAdapter.ViewHolder>() {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val listName: TextView
+        val listAddress: TextView
+        val listNumber: TextView
+
+        init {
+            listName = itemView.findViewById(R.id.list_name)
+            listAddress = itemView.findViewById(R.id.list_address)
+            listNumber = itemView.findViewById(R.id.list_number)
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = inflater.inflate(R.layout.location_card, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return placeList.place_list.size
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
+}
+
+class Places() {
+    val place_list = ArrayList<Place>()
+
+    fun addPlace(p: Place) {
+        place_list.add(p)
+    }
+}
+
 /*
 class NetworkTask(
     val recyclerView: RecyclerView,
