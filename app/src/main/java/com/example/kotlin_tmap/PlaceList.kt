@@ -74,13 +74,16 @@ class PlaceList : AppCompatActivity() {
                     }
                     placeRecyclerAdapter = PlaceRecylerAdapter(
                         temp_list,
-                        LayoutInflater.from(this@PlaceList),
-                        this@PlaceList
+                        LayoutInflater.from(this@PlaceList)
                     )
                     Log.d("result!!", "len : " + temp_list.place_list.size)
+
+                    place_list.adaper = placeRecyclerAdapter
                 }
             }
         })
+
+
 
     }
 }
@@ -88,7 +91,6 @@ class PlaceList : AppCompatActivity() {
 class PlaceRecylerAdapter(
     val placeList: Places,
     val inflater: LayoutInflater,
-    val activity: Activity
 ) : RecyclerView.Adapter<PlaceRecylerAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val listName: TextView
@@ -112,7 +114,9 @@ class PlaceRecylerAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.listName.setText(placeList.place_list[position].name)
+        holder.listAddress.setText(placeList.place_list[position].address)
+        holder.listNumber.setText(placeList.place_list[position].phone)
     }
 }
 
@@ -123,7 +127,6 @@ class Places() {
         place_list.add(p)
     }
 }
-
 /*
 class NetworkTask(
     val recyclerView: RecyclerView,
