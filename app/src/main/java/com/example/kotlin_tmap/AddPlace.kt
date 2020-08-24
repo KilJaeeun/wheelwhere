@@ -78,13 +78,6 @@ class AddPlace : AppCompatActivity() {
                     star = "1"
                 )
 
-            Log.d("result!!", "name : " + rest.name)
-            Log.d("result!!", "address : " + rest.address)
-            Log.d("result!!", "restFlag : " + rest.is_toilet)
-            Log.d("result!!", "parkFlag : " + rest.is_parking)
-            Log.d("result!!", "elvFlag : " + rest.is_elevator)
-            Log.d("result!!", "helpFlag : " + rest.is_helper)
-
             service.createData(rest).enqueue(object : Callback<Place> {
                 override fun onFailure(call: Call<Place>, t: Throwable) {
                     Log.d("result!!", "failed to upload !")

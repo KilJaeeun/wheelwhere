@@ -3,6 +3,7 @@ package com.example.kotlin_tmap
 
 import android.app.Activity
 import android.content.Intent
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,11 +11,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_place_list.*
-import android.os.AsyncTask
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_place_list.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,8 +39,8 @@ class PlaceList : AppCompatActivity() {
             recycler_places,
             LayoutInflater.from(this@PlaceList),
             this@PlaceList
-        ).execute()
-*/
+        ).execute()*/
+        Log.d("result!!", "service is just started. ")
         service.getDataList().enqueue(object : Callback<ArrayList<Place>> {
             override fun onFailure(call: Call<ArrayList<Place>>, t: Throwable) {
                 Log.d("result!!", "Error (getting data)!")
@@ -51,23 +52,91 @@ class PlaceList : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val dataList = response.body()
-                    Log.d("result!!", "id : " + dataList?.get(0)?.id)
-                    Log.d("result!!", "name : " + dataList?.get(0)?.name)
-                    Log.d("result!!", "is_toilet : " + dataList?.get(0)?.is_toilet)
-                    Log.d("result!!", "is_elevator : " + dataList?.get(0)?.is_elevator)
-                    Log.d("result!!", "is_parking : " + dataList?.get(0)?.is_parking)
-                    Log.d("result!!", "is_helper : " + dataList?.get(0)?.is_helper)
-                    Log.d("result!!", "address : " + dataList?.get(0)?.address)
-                    Log.d("result!!", "is_tuck : " + dataList?.get(0)?.is_tuck)
-                    Log.d("result!!", "description : " + dataList?.get(0)?.description)
-                    Log.d("result!!", "latitude : " + dataList?.get(0)?.latitude)
-                    Log.d("result!!", "longitude : " + dataList?.get(0)?.longitude)
-                    Log.d("result!!", "star : " + dataList?.get(0)?.star)
-                    Log.d("result!!", "author : " + dataList?.get(0)?.author)
+                    var places = ArrayList<Place>()
+                    for (d in dataList!!) {
+                        Log.d("result!!", "name : " + d.name)
+                        /*places.add(
+                            Place(
+                                name = d.name,
+                                phone = d.phone,
+                                is_toilet = d.is_toilet,
+                                is_elevator = d.is_elevator,
+                                is_parking = d.is_parking,
+                                is_helper = d.is_helper,
+                                address = d.address,
+                                is_tuck = d.is_tuck,
+                                description = d.description,
+                                latitude = d.latitude,
+                                longitude = d.longitude,
+                                star = d.star,
+                                author = d.author
+                            )
+                        )*/
+                        places.add(d)
+                    }
+                    /*places.add(
+                        Place(
+                            name = "1",
+                            phone = "2",
+                            is_toilet = false,
+                            is_elevator = false,
+                            is_helper = false,
+                            is_parking = false,
+                            is_tuck = false,
+                            address = "3",
+                            description = "4",
+                            latitude = "5",
+                            longitude = "6",
+                            star = "7",
+                            author = "8"
+                        )
+                    )*/
+
+                    Log.d("result!!", "done. " + places.size)
+
+                    val adapter = RecyclerViewAdapter(places, LayoutInflater.from(this@PlaceList))
+                    Log.d("result!!", "done1. ")
+                    recycler_places.adapter = adapter
+                    Log.d("result!!", "done2. ")
+                    recycler_places.layoutManager = LinearLayoutManager(this@PlaceList)
+                    Log.d("result!!", "done3. ")
                 }
+                Log.d("result!!", "done4. ")
             }
         })
+        Log.d("result!!", "service is done. ")
+    }
+}
 
+class RecyclerViewAdapter(
+    val itemList: ArrayList<Place>,
+    val inflater: LayoutInflater
+) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val pname: TextView
+        val paddress: TextView
+        val pnumber: TextView
+
+        init {
+            pname = itemView.findViewById(R.id.list_name_card)
+            paddress = itemView.findViewById(R.id.list_address_card)
+            pnumber = itemView.findViewById(R.id.list_number_card)
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = inflater.inflate(R.layout.location_card, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return itemList.size
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.pname.setText(itemList[position].name)
+        holder.paddress.setText(itemList[position].address)
+        holder.pnumber.setText(itemList[position].phone)
     }
 }
 /*
@@ -115,12 +184,12 @@ class PersonAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView
         val address: TextView
-        val location_id: TextView
+        val number: TextView
 
         init {
-            location_id = itemView.findViewById(R.id.location_id)
-            name = itemView.findViewById(R.id.location_name)
-            address = itemView.findViewById(R.id.location_address)
+            number = itemView.findViewById(R.id.list_number_card)
+            name = itemView.findViewById(R.id.list_name_card)
+            address = itemView.findViewById(R.id.list_address_card)
 
 
             itemView.setOnClickListener {
@@ -138,7 +207,7 @@ class PersonAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = inflater.inflate(R.layout.place_item, parent, false)
+        val view = inflater.inflate(R.layout.location_card, parent, false)
         return ViewHolder(view)
     }
 
@@ -149,6 +218,6 @@ class PersonAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.setText(personList.get(position).name ?: "")
         holder.address.setText(personList.get(position).address.toString() ?: "")
+        holder.number.setText("11111")
     }
-}
-*/
+}*/

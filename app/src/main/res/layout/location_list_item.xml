@@ -20,7 +20,7 @@
             android:layout_height="30dp"
             android:text="위치명:  "></TextView>
         <TextView
-            android:id="@+id/location_name"
+            android:id="@+id/list_name"
             android:layout_width="wrap_content"
             android:layout_height="30dp"></TextView>
     </LinearLayout>
@@ -35,7 +35,7 @@
             android:text="실제주소:  "></TextView>
 
         <TextView
-            android:id="@+id/location_address"
+            android:id="@+id/list_address"
             android:layout_width="wrap_content"
             android:layout_height="30dp"></TextView>
     </LinearLayout>
