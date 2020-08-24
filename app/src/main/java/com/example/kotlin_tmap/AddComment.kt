@@ -7,7 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_add_comment.*
 import kotlinx.android.synthetic.main.activity_empty_commetn.*
+import kotlinx.android.synthetic.main.activity_empty_commetn.recieve_comment
+import kotlinx.android.synthetic.main.activity_empty_commetn.recieve_comment_btn
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,6 +25,9 @@ class AddComment : AppCompatActivity() {
     }
 
     fun getCommentAndDrawServer(activity:Activity) {
+        go_back.setOnClickListener {
+            super.onBackPressed()
+        }
         val post = intent.getStringExtra("post")
         recieve_comment_btn.setOnClickListener {
             val retrofit = Retrofit.Builder().baseUrl("http://3.35.90.80")
