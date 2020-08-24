@@ -34,12 +34,12 @@ class PlaceList : AppCompatActivity() {
         val retrofit = Retrofit.Builder().baseUrl("http://3.35.90.80")
             .addConverterFactory(GsonConverterFactory.create()).build()
         val service = retrofit.create(RetrofitService::class.java)
-/*
+
         NetworkTask(
             recycler_places,
             LayoutInflater.from(this@PlaceList),
             this@PlaceList
-        ).execute()*/
+        ).execute()
         Log.d("result!!", "service is just started. ")
         service.getDataList().enqueue(object : Callback<ArrayList<Place>> {
             override fun onFailure(call: Call<ArrayList<Place>>, t: Throwable) {
@@ -139,7 +139,7 @@ class RecyclerViewAdapter(
         holder.pnumber.setText(itemList[position].phone)
     }
 }
-/*
+
 class NetworkTask(
     val recyclerView: RecyclerView,
     val inflater: LayoutInflater,
@@ -220,4 +220,4 @@ class PersonAdapter(
         holder.address.setText(personList.get(position).address.toString() ?: "")
         holder.number.setText("11111")
     }
-}*/
+}

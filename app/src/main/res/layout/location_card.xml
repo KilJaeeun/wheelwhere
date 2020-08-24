@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="302.4dp"
-    android:layout_height="169.36dp"
-    android:layout_marginLeft="50dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
     android:layout_marginBottom="19.64dp"
     android:background="@drawable/border"
-    android:elevation="122dp">
+   >
     <!-- marginLeft ???? -->
 
     <LinearLayout
+        android:layout_gravity="center"
+        android:background="@drawable/location_back"
         android:layout_width="302.4dp"
-        android:layout_height="169.36dp"
+        android:layout_height="208dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -76,7 +79,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="14.85dp"
                 android:layout_marginBottom="6.09dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
@@ -102,7 +105,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="14dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -130,9 +133,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_marginLeft="29.02dp"
-            android:layout_marginTop="22.09dp"
+            android:layout_marginTop="22dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
