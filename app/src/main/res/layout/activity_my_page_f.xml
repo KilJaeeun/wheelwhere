@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MyPage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:lineHeight="22dp"
+            android:lineSpacingExtra="-0.42dp"
+            android:text="내 정보"
+            android:textColor="#000000"
+            android:textSize="17dp"
+
+            ></TextView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/greytext"
+        android:orientation="vertical"></LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="102dp"
+            android:layout_marginBottom="36dp"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:gravity="center_horizontal"
+            android:lineHeight="24dp"
+            android:lineSpacingExtra="-0.54dp"
+            android:text="로그인이\n 필요한 기능입니다"
+            android:textColor="#000000"
+            android:textSize="18dp"></TextView>
+
+        <LinearLayout
+            android:layout_width="188.28dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="101.93dp"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/input_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="-10dp"
+                android:bufferType="normal"
+                android:fontFamily="@font/notosanscjkkr_light"
+                android:hint="아이디(이메일 주소)"
+                android:textColor="#000000"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="188.28dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="23dp"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/new_name_add"
+                android:fontFamily="@font/notosanscjkkr_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="-10dp"
+                android:bufferType="normal"
+                android:hint="비밀번호"
+                android:textColor="#000000"
+                android:textSize="12dp" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/submit_add"
+            android:layout_width="156.57dp"
+            android:layout_height="34.46dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="68.96dp"
+            android:background="@drawable/btn_login"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:text="로그인"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+</LinearLayout>
