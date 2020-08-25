@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".AddComment">
+    tools:context=".AddComments">
     <!--후기 작성 탭바 start-->
     <LinearLayout
         android:layout_width="match_parent"

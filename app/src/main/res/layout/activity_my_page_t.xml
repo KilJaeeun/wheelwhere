@@ -68,8 +68,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/btn_addplace"
-                android:drawableLeft="@drawable/icn_plus"
+
                 android:drawablePadding="-50dp"
                 android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
@@ -88,8 +87,6 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/btn_addplace"
-                android:drawableLeft="@drawable/icn_pencil"
                 android:drawablePadding="-50dp"
                 android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
