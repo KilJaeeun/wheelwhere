@@ -101,7 +101,6 @@
             android:layout_height="34.46dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="68.96dp"
-            android:background="@drawable/btn_login"
             android:fontFamily="@font/notosanscjkkr_medium"
             android:text="로그인"
             android:textColor="#FFFFFF"

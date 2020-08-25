@@ -16,37 +16,22 @@
         android:roundIcon="@mipmap/ic_tmap_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PlaceDetail"></activity>
         <activity android:name=".AddPlace" />
-        <activity android:name=".PlaceDetail">
 
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="@string/kakaolink_host"
-                    android:scheme="@string/kakao_scheme" />
-            </intent-filter>
-            <meta-data
-                android:name="com.kakao.sdk.AppKey"
-                android:value="@string/kakao_app_key" />
-
-
-        </activity>
         <activity android:name=".MyPage" />
         <activity android:name=".Loading" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" />
-        <activity android:name=".PlaceList" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="@string/title_activity_main">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity android:name=".PlaceList">
+
         </activity>
         <activity
             android:name=".MasterApplication"
@@ -57,7 +42,11 @@
         <activity android:name=".map.ReverseGeo" />
         <activity android:name=".map.RouteInfo" />
         <activity android:name=".map.MapExample">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
