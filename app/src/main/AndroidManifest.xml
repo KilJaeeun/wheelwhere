@@ -19,6 +19,7 @@
         <activity android:name=".AddPlace" />
         <activity android:name=".MyPage" />
         <activity android:name=".Loading" />
+        <activity android:name=".PlaceDetail" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />

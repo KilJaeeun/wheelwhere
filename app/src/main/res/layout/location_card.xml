@@ -3,9 +3,9 @@
     android:layout_width="302.4dp"
     android:layout_height="169.36dp"
     android:layout_marginLeft="50dp"
-    android:layout_marginBottom="19.64dp"
+    android:layout_marginTop="19.64dp"
     android:background="@drawable/border"
-    android:elevation="122dp">
+    android:elevation="3dp">
     <!-- marginLeft ???? -->
 
     <LinearLayout

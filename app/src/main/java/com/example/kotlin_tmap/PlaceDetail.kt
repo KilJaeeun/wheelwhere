@@ -14,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_add_place.*
 import kotlinx.android.synthetic.main.activity_empty_commetn.*
 import kotlinx.android.synthetic.main.activity_place_detail.*
 import kotlinx.android.synthetic.main.activity_place_list.*
@@ -31,15 +32,28 @@ class PlaceDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_place_detail)
-        getPlaceInfoAndDraw(this@PlaceDetail)
+
+        back_of_detail.setOnClickListener {
+            onBackPressed()
+        }
+
+        val name = intent.getStringExtra("name")
+        val address = intent.getStringExtra("address")
+        val number = intent.getStringExtra("number")
+
+        detail_name.setText(name)
+        detail_address.setText(address)
+        detail_number.setText(number)
+
+        /*getPlaceInfoAndDraw(this@PlaceDetail)
         NetworkTask2(
             comments_list,
             LayoutInflater.from(this@PlaceDetail)
         ).execute()
-
+        */
     }
 
-
+/*
     fun getPlaceInfoAndDraw(activity: Activity) {
         val post_ids = intent.getStringExtra("post")
         val name = intent.getStringExtra("name")
@@ -114,5 +128,5 @@ class CommentAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.text.setText(personList.get(position).text ?: "")
-    }
+    }*/
 }
