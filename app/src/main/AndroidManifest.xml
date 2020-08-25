@@ -27,13 +27,11 @@
         <activity android:name=".Loading" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" />
-        <activity android:name=".PlaceList">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="@string/title_activity_main">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity android:name=".PlaceList">
+
         </activity>
         <activity
             android:name=".MasterApplication"
@@ -43,7 +41,13 @@
         <activity android:name=".map.SearchPOI" />
         <activity android:name=".map.ReverseGeo" />
         <activity android:name=".map.RouteInfo" />
-        <activity android:name=".map.MapExample" />
+        <activity android:name=".map.MapExample">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
