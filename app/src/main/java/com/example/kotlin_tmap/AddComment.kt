@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_add_comment.*
+import org.jetbrains.anko.imageResource
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,7 +22,7 @@ class AddComment : AppCompatActivity() {
         var flag = 0
         getCommentAndDrawServer(this@AddComment, 0)
     }
-    fun getCommentAndDrawServer(activity: Activity, flag_input: Int) {
+    fun getCommentAndDrawServer(activity: Activity, flag_input: Int){
         var flag = flag_input
         go_back.setOnClickListener {
             super.onBackPressed()
@@ -33,6 +34,8 @@ class AddComment : AppCompatActivity() {
 
         star_input.setOnClickListener {
             Log.d("star_debug", ""+flag)
+
+            Log.d("star_debug", ""+star_input.getTag())
 
                 when (flag) {
                     0 -> {
@@ -74,7 +77,9 @@ class AddComment : AppCompatActivity() {
             val comment: CommentRegister =
                 CommentRegister(
                     text = recieve_comment.text.toString(),
-                    post = post.toInt()
+                    post = post.toInt(),
+                    star=flag.toFloat()
+
                 )
 
             service.createComment(comment).enqueue(object : Callback<CommentRegister> {
