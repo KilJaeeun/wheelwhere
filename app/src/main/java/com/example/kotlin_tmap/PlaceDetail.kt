@@ -48,13 +48,14 @@ class PlaceDetail : AppCompatActivity() {
 
     fun getPlaceInfoAndDraw(activity: Activity) {
         place_share.setOnClickListener {
-
-
+            Toast.makeText(activity, "공유버튼클릭 ", Toast.LENGTH_LONG).show()
+            Log.d("share","click")
             try {
                 kakaoLink()
+                Log.d("share","sucess")
 
             }catch (e: Exception){
-                Log.d("error","wee")
+                Log.d("share","share")
             }
 
 
@@ -91,10 +92,9 @@ class PlaceDetail : AppCompatActivity() {
             .addButton(
                 ButtonObject(
                     "웹에서 보기",
-                    LinkObject.newBuilder().setWebUrl("https://developers.kakao.com")
-                        .setMobileWebUrl(
-                            "https://developers.kakao.com"
-                        ).build()
+                    LinkObject.newBuilder().setWebUrl("https://developers.kakao.com").setMobileWebUrl(
+                        "https://developers.kakao.com"
+                    ).build()
                 )
             )
             .addButton(

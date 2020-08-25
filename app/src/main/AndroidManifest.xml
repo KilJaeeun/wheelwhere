@@ -20,20 +20,18 @@
         <activity android:name=".AddPlace" />
         <activity android:name=".PlaceDetail">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
 
                 <data
-                    android:host="@string/kakaolink_host"
-                    android:scheme="@string/kakao_scheme" />
+                    android:scheme="@string/kakao_scheme"
+                    android:host="@string/kakaolink_host"/>
             </intent-filter>
-
-            <meta-data
-                android:name="com.kakao.sdk.AppKey"
-                android:value="@string/kakao_app_key" />
         </activity>
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
         <activity android:name=".MyPage" />
         <activity android:name=".Loading" />
         <activity

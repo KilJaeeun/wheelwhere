@@ -98,8 +98,9 @@ dependencies {
     // 카카오스토리
     implementation group: 'com.kakao.sdk', name: 'kakaostory', version: '1.30.0'
     // 카카오링크
-    implementation group: 'com.kakao.sdk', name: 'kakaolink', version: '1.30.0'
+    implementation group: 'com.kakao.sdk', name: 'kakaolink', version: project.KAKAO_SDK_VERSION
     // 카카오내비
     implementation group: 'com.kakao.sdk', name: 'kakaonavi', version: '1.30.0'
 
 }
+// ADD THIS AT THE BOTTOM
