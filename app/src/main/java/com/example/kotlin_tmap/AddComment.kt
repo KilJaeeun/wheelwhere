@@ -14,6 +14,9 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AddComment : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,49 +25,54 @@ class AddComment : AppCompatActivity() {
         var flag = 0
         getCommentAndDrawServer(this@AddComment, 0)
     }
-    fun getCommentAndDrawServer(activity: Activity, flag_input: Int){
+
+    fun getCommentAndDrawServer(activity: Activity, flag_input: Int) {
+        // 현재 date 가 후기에 출력되게 start
+        val cal = Calendar.getInstance()
+        cal.time = Date()
+        val df: String = SimpleDateFormat("yyyy.MM.dd").format(cal.time)
+        date.setText(df)
+        // 현재 date 가 후기에 출력되게 end
         var flag = flag_input
         go_back.setOnClickListener {
             super.onBackPressed()
         }
 
-//        // get reference to ImageView
         var star_input = findViewById(R.id.star_input) as ImageView
-//// set on-click listener for ImageView
 
         star_input.setOnClickListener {
-            Log.d("star_debug", ""+flag)
+            Log.d("star_debug", "" + flag)
 
-            Log.d("star_debug", ""+star_input.getTag())
+            Log.d("star_debug", "" + star_input.getTag())
 
-                when (flag) {
-                    0 -> {
-                        flag += 1
-                        star_input.setImageResource(R.drawable.star1)
-                    }
-                    1 -> {
-                        flag += 1
-                        star_input.setImageResource(R.drawable.star2)
-                    }
-                    2 -> {
-                        flag += 1
-                        star_input.setImageResource(R.drawable.star3)
-                    }
-                    3 -> {
-                        flag += 1
-                        star_input.setImageResource(R.drawable.star4)
-                    }
-                    4 -> {
-                        flag += 1
-                        star_input.setImageResource(R.drawable.star5)
-                    }
-                    else -> {
-                        flag = 0
-                        star_input.setImageResource(R.drawable.star0)
-                    }
-
-
+            when (flag) {
+                0 -> {
+                    flag += 1
+                    star_input.setImageResource(R.drawable.star1)
                 }
+                1 -> {
+                    flag += 1
+                    star_input.setImageResource(R.drawable.star2)
+                }
+                2 -> {
+                    flag += 1
+                    star_input.setImageResource(R.drawable.star3)
+                }
+                3 -> {
+                    flag += 1
+                    star_input.setImageResource(R.drawable.star4)
+                }
+                4 -> {
+                    flag += 1
+                    star_input.setImageResource(R.drawable.star5)
+                }
+                else -> {
+                    flag = 0
+                    star_input.setImageResource(R.drawable.star0)
+                }
+
+
+            }
 
         }
 
@@ -78,7 +86,7 @@ class AddComment : AppCompatActivity() {
                 CommentRegister(
                     text = recieve_comment.text.toString(),
                     post = post.toInt(),
-                    star=flag.toFloat()
+                    star = flag.toFloat()
 
                 )
 

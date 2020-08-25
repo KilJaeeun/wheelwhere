@@ -76,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:lineHeight="16sp"
+            android:id="@+id/date"
             android:lineSpacingExtra="-0.3sp"
             android:text="2020.08.15"
             android:textColor="@color/greytext"
