@@ -14,15 +14,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
-<<<<<<< HEAD
-import kotlinx.android.synthetic.main.activity_add_place.*
-=======
-import com.kakao.kakaolink.v2.KakaoLinkResponse
-import com.kakao.kakaolink.v2.KakaoLinkService
-import com.kakao.message.template.*
-import com.kakao.network.ErrorResult
-import com.kakao.network.callback.ResponseCallback
->>>>>>> c54b225e317d07646a705230ef74c107e935bf47
 import kotlinx.android.synthetic.main.activity_empty_commetn.*
 import kotlinx.android.synthetic.main.activity_place_detail.*
 import kotlinx.android.synthetic.main.activity_place_list.*

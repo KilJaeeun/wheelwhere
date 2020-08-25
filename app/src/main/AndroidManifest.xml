@@ -16,25 +16,15 @@
         android:roundIcon="@mipmap/ic_tmap_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".PlaceDetail"></activity>
         <activity android:name=".AddPlace" />
-        <activity android:name=".PlaceDetail">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
 
-                <data
-                    android:scheme="@string/kakao_scheme"
-                    android:host="@string/kakaolink_host"/>
-            </intent-filter>
-        </activity>
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
+
         <activity android:name=".MyPage" />
         <activity android:name=".Loading" />
-        <activity android:name=".PlaceDetail" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
@@ -53,7 +43,7 @@
         <activity android:name=".map.SearchPOI" />
         <activity android:name=".map.ReverseGeo" />
         <activity android:name=".map.RouteInfo" />
-        <activity android:name=".map.MapExample"></activity>
+        <activity android:name=".map.MapExample" />
     </application>
 
 </manifest>
