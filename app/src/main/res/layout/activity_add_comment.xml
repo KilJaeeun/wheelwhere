@@ -4,21 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".AddComment">
-
-    <TextView
+    <!--후기 작성 탭바 start-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:background="@color/white"
-        android:gravity="center"
-        android:lineHeight="22sp"
-        android:lineSpacingExtra="-0.42sp"
-        android:text="후기 작성"
-        android:fontFamily="@font/notosanscjkkr_bold"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
-        android:textColor="#000000"
-        android:textSize="17sp"></TextView>
+        <ImageView
+            android:id="@+id/go_back"
+            android:layout_width="7.76dp"
+            android:layout_height="13.14dp"
+            android:layout_marginLeft="28.32dp"
+            android:layout_marginTop="20.37dp"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginLeft="-28.32dp"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:gravity="center"
+            android:lineHeight="22sp"
+            android:lineSpacingExtra="-0.42sp"
+            android:text="후기 작성"
+            android:textColor="#000000"
+            android:textSize="17sp"></TextView>
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,55 +43,98 @@
         android:background="@color/greytext"
 
         ></LinearLayout>
-
+    <!--후기 작성 탭바 end-->
+    <!--    예동이 후기 작성일 start-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:background="@color/greytext"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="28dp">
 
-        ></LinearLayout>
+        <LinearLayout
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="6dp"
+            android:background="@color/greytext"></LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="170sp"
+            android:lineHeight="19sp"
+            android:lineSpacingExtra="-0.35sp"
+            android:text="예동이"
+            android:textColor="@color/black"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:lineHeight="16sp"
+            android:id="@+id/date"
+            android:lineSpacingExtra="-0.3sp"
+            android:text="2020.08.15"
+            android:textColor="@color/greytext"
+            android:textSize="12sp"></TextView>
+    </LinearLayout>
+    <!--예동이 후기 작성일 탭바 end-->
     <EditText
         android:id="@+id/recieve_comment"
         android:layout_width="match_parent"
         android:layout_height="260dp"
-        android:hint="후기를 입력해주세요."
+        android:background="@color/white"
         android:fontFamily="@font/notosanscjkkr_light"
+        android:hint="후기를 입력해주세요."
 
         android:padding="10dp"
         android:textColorHint="@color/greytext"></EditText>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/greytext"
 
         ></LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:orientation="horizontal"
-        android:paddingLeft="115dp"
-        android:paddingRight="115dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        ></LinearLayout>
+        <ImageView
+            android:id="@+id/star_input"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:src="@drawable/star0"></ImageView>
+
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/greytext"
 
         ></LinearLayout>
+
     <Button
-        android:layout_marginTop="20dp"
         android:id="@+id/recieve_comment_btn"
         android:layout_width="81dp"
-        android:gravity="center"
-        android:layout_gravity="center"
         android:layout_height="34dp"
-        android:textColor="@color/white"
-
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:background="@drawable/black_btn_radius"
-        android:text="완료"
         android:fontFamily="@font/notosanscjkkr_medium"
+
+        android:gravity="center"
+        android:text="완료"
+        android:textColor="@color/white"
 
         android:textSize="16sp"></Button>
 </LinearLayout>

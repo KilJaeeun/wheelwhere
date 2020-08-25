@@ -14,7 +14,15 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
+<<<<<<< HEAD
 import kotlinx.android.synthetic.main.activity_add_place.*
+=======
+import com.kakao.kakaolink.v2.KakaoLinkResponse
+import com.kakao.kakaolink.v2.KakaoLinkService
+import com.kakao.message.template.*
+import com.kakao.network.ErrorResult
+import com.kakao.network.callback.ResponseCallback
+>>>>>>> c54b225e317d07646a705230ef74c107e935bf47
 import kotlinx.android.synthetic.main.activity_empty_commetn.*
 import kotlinx.android.synthetic.main.activity_place_detail.*
 import kotlinx.android.synthetic.main.activity_place_list.*
@@ -25,6 +33,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import java.lang.Exception
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -55,6 +64,19 @@ class PlaceDetail : AppCompatActivity() {
 
 /*
     fun getPlaceInfoAndDraw(activity: Activity) {
+        place_share.setOnClickListener {
+            Toast.makeText(activity, "공유버튼클릭 ", Toast.LENGTH_LONG).show()
+            Log.d("share","click")
+            try {
+                kakaoLink()
+                Log.d("share","sucess")
+
+            }catch (e: Exception){
+                Log.d("share","share")
+            }
+
+
+        }
         val post_ids = intent.getStringExtra("post")
         val name = intent.getStringExtra("name")
         val address = intent.getStringExtra("address")
@@ -66,6 +88,61 @@ class PlaceDetail : AppCompatActivity() {
             intent.putExtra("post", post_ids)
             activity.startActivity(intent)
         }
+    }
+
+    fun kakaoLink() {
+        val params = FeedTemplate
+            .newBuilder(
+                ContentObject.newBuilder(
+                    "디저트 사진",
+                    "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
+                    LinkObject.newBuilder().setWebUrl("https://developers.kakao.com")
+                        .setMobileWebUrl("https://developers.kakao.com").build()
+                )
+                    .setDescrption("아메리카노, 빵, 케익")
+                    .build()
+            )
+            .setSocial(
+                SocialObject.newBuilder().setLikeCount(10).setCommentCount(20)
+                    .setSharedCount(30).setViewCount(40).build()
+            )
+            .addButton(
+                ButtonObject(
+                    "웹에서 보기",
+                    LinkObject.newBuilder().setWebUrl("https://developers.kakao.com").setMobileWebUrl(
+                        "https://developers.kakao.com"
+                    ).build()
+                )
+            )
+            .addButton(
+                ButtonObject(
+                    "앱에서 보기", LinkObject.newBuilder()
+                        .setWebUrl("'https://developers.kakao.com")
+                        .setMobileWebUrl("https://developers.kakao.com")
+                        .setAndroidExecutionParams("key1=value1")
+                        .setIosExecutionParams("key1=value1")
+                        .build()
+                )
+            )
+            .build()
+
+        val serverCallbackArgs: MutableMap<String, String> =
+            HashMap()
+        serverCallbackArgs["user_id"] = "\${current_user_id}"
+        serverCallbackArgs["product_id"] = "\${shared_product_id}"
+
+        KakaoLinkService.getInstance().sendDefault(
+            this,
+            params,
+            serverCallbackArgs,
+            object : ResponseCallback<KakaoLinkResponse?>() {
+                override fun onFailure(errorResult: ErrorResult) {
+                    //Logger.e(errorResult.toString())
+                }
+
+                override fun onSuccess(result: KakaoLinkResponse?) { // 템플릿 밸리데이션과 쿼터 체크가 성공적으로 끝남. 톡에서 정상적으로 보내졌는지 보장은 할 수 없다. 전송 성공 유무는 서버콜백 기능을 이용하여야 한다.
+                }
+            })
     }
 }
 
