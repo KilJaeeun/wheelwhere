@@ -58,11 +58,12 @@
 
     <LinearLayout
         android:visibility="invisible"
+
         android:id="@+id/location_card"
         android:layout_width="320dp"
         android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/card_background"
         android:orientation="vertical"
         android:paddingLeft="26dp">
