@@ -2,18 +2,18 @@ package com.example.kotlin_tmap.map
 
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.graphics.Canvas
 import android.location.Location
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlin_tmap.AddPlace
+import com.example.kotlin_tmap.ImageOverlay
 import com.example.kotlin_tmap.PlaceList
 import com.example.kotlin_tmap.R
 import com.example.kotlin_tmap.base.App
 import com.example.kotlin_tmap.util.permission
-import com.skt.Tmap.TMapGpsManager
-import com.skt.Tmap.TMapMarkerItem
-import com.skt.Tmap.TMapPoint
-import com.skt.Tmap.TMapView
+import com.skt.Tmap.*
 import kotlinx.android.synthetic.main.activity_map_example.*
 
 
@@ -52,16 +52,26 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
             R.drawable.boxicon
         )
         val tMapPoint = TMapPoint(37.579600, 126.976998)
+        //  val tMapOverlay = TMapOverlay()
+        // val strID = "TMapMarkerItem2"
 
-    /*    btnMove.setOnClickListener {
+//        val mOverlay =  ImageOverlay(this,tmapview )
+//        class MapOverlay : TMapOverlayItem() {
+//            override fun draw(canvas: Canvas?, mapView: TMapView?, showCallout: Boolean) {}
+//        }
+        btnMove.setOnClickListener {
             markerItem.icon = bitmapIcon
             markerItem.setPosition(0.5f, 1.0f)
             markerItem.tMapPoint = tMapPoint
             markerItem.name = "경복궁"
+            item_name.setText("경복궁")
+            item_location.setText("서울특별시 종로구 세종로 사직로 161")
             tmapview.addMarkerItem("markerItem", markerItem)
             tmapview.setCenterPoint(126.976998, 37.579600, true)
+            location_card.setVisibility(LinearLayout.VISIBLE)
+            
         }
-*/
+
         buttonZoomIn.setOnClickListener {
             tmapview.MapZoomIn()
         }

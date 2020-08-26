@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlaceDetail"></activity>
+        <activity android:name=".ImageOverlay"></activity>
+        <activity android:name=".PlaceDetail" />
         <activity android:name=".AddPlace" />
 
         <meta-data
@@ -27,12 +28,8 @@
         <activity android:name=".Loading" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main">
-
-        </activity>
-        <activity android:name=".PlaceList">
-
-        </activity>
+            android:label="@string/title_activity_main"></activity>
+        <activity android:name=".PlaceList"></activity>
         <activity
             android:name=".MasterApplication"
             tools:ignore="Instantiatable" />
