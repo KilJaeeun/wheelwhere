@@ -16,6 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activity_Sign_up">
+        </activity>
         <activity android:name=".LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,6 +38,9 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
         <activity android:name=".PlaceList" />
+        <activity android:name=".Activity_Login">
+
+        </activity>
         <activity
             android:name=".MasterApplication"
             tools:ignore="Instantiatable" />
@@ -44,9 +49,7 @@
         <activity android:name=".map.SearchPOI" />
         <activity android:name=".map.ReverseGeo" />
         <activity android:name=".map.RouteInfo" />
-        <activity android:name=".map.MapExample">
-
-        </activity>
+        <activity android:name=".map.MapExample"></activity>
     </application>
 
 </manifest>

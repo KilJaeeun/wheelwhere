@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_my_page_social)
 
         //btn_googleSignIn.setOnClickListener (this) // 구글 로그인 버튼
         google_sign_in_btn.setOnClickListener { googleLogin() }
@@ -49,7 +49,6 @@ class LoginActivity : AppCompatActivity() {
         //Google 로그인 옵션 구성. requestIdToken 및 Email 요청
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken("469674171331-q0e7hsq817qgpn23fo56hi06u5o6j0a3.apps.googleusercontent.com")
-
             .requestEmail()
             .build()
 
@@ -66,7 +65,6 @@ class LoginActivity : AppCompatActivity() {
         if (account !== null) { // 이미 로그인 되어있을시 바로 메인 액티비티로 이동
             toMainActivity(firebaseAuth.currentUser)
             startActivity(Intent(this@LoginActivity, PlaceList::class.java))
-
         }
     } //onStart End
 

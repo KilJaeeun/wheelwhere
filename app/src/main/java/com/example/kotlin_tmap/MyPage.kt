@@ -7,7 +7,8 @@ import com.example.kotlin_tmap.map.MapExample
 import kotlinx.android.synthetic.main.activity_add_comment.*
 import kotlinx.android.synthetic.main.activity_map_example.*
 import kotlinx.android.synthetic.main.activity_my_page_t.*
-import kotlinx.android.synthetic.main.activity_my_page_t.go_back
+
+//import kotlinx.android.synthetic.main.activity_my_page_t.go_back
 import kotlinx.android.synthetic.main.activity_place_detail.*
 
 class MyPage : AppCompatActivity() {
@@ -19,7 +20,7 @@ class MyPage : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        go_back.setOnClickListener {
+        go_back_my.setOnClickListener {
             super.onBackPressed()
         }
         my_post.setOnClickListener {

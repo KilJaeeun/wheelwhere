@@ -10,30 +10,29 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:background="@color/white"
-        android:gravity="center_horizontal"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/go_back"
+            android:id="@+id/go_back_my"
             android:layout_width="7.76dp"
             android:layout_height="13.14dp"
-            android:layout_marginLeft="28.32dp"
-            android:layout_marginTop="20.37dp"
             android:src="@drawable/back_icon" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_marginLeft="-28.32dp"
-            android:fontFamily="@font/notosanscjkkr_bold"
-            android:gravity="center"
-            android:lineHeight="22sp"
-            android:lineSpacingExtra="-0.42sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:lineHeight="22dp"
+            android:lineSpacingExtra="-0.42dp"
             android:text="내 정보"
             android:textColor="#000000"
-            android:textSize="17sp"></TextView>
+            android:textSize="17dp"
+
+            ></TextView>
     </LinearLayout>
 
 
@@ -48,6 +47,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <ImageView
             android:layout_width="118dp"
             android:layout_height="118dp"
@@ -58,7 +58,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="36dp"
@@ -83,17 +83,18 @@
             <ImageView
                 android:layout_width="14dp"
                 android:layout_height="14dp"
-                android:src="@drawable/ic_plus"
-
-                ></ImageView>
+                android:src="@drawable/ic_plus"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:fontFamily="@font/notosanscjkkr_medium"
-                android:gravity="center"
-                android:paddingLeft="5dp"
-                android:text="장소 추가"></TextView>
+                android:orientation="horizontal"
+                android:text="장소 추가"
+                android:textColor="#000000" />
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -103,6 +104,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="7.8dp"
             android:layout_marginBottom="143.8dp"
+
             android:background="@drawable/button_background"
             android:gravity="center_vertical"
             android:orientation="horizontal"
@@ -119,10 +121,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
                 android:fontFamily="@font/notosanscjkkr_medium"
-                android:gravity="center"
-                android:paddingLeft="5dp"
-                android:text="나의 작성글"></TextView>
+                android:text="나의 작성글"
+                android:textColor="#000000" />
+
+
         </LinearLayout>
     </LinearLayout>
 

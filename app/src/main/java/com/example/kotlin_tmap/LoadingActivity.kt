@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.example.kotlin_tmap.map.MapExample
 
-class LoadingActivity : AppCompatActivity() {
+class   LoadingActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT:Long = 1000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
