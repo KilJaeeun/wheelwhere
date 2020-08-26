@@ -7,10 +7,7 @@ import android.location.Location
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kotlin_tmap.AddPlace
-import com.example.kotlin_tmap.ImageOverlay
-import com.example.kotlin_tmap.PlaceList
-import com.example.kotlin_tmap.R
+import com.example.kotlin_tmap.*
 import com.example.kotlin_tmap.base.App
 import com.example.kotlin_tmap.util.permission
 import com.skt.Tmap.*
@@ -108,6 +105,11 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
 
         list_button.setOnClickListener {
             val intent = Intent(this, PlaceList::class.java)
+            startActivity(intent)
+            finish()
+        }
+       my_page.setOnClickListener {
+            val intent = Intent(this, MyPage::class.java)
             startActivity(intent)
             finish()
         }

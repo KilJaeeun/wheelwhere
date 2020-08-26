@@ -3,29 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MyPage">
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="53dp"
-        android:layout_gravity="center"
-        android:gravity="center"
+        android:layout_height="52dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
         android:orientation="horizontal">
 
+        <ImageView
+            android:id="@+id/go_back"
+            android:layout_width="7.76dp"
+            android:layout_height="13.14dp"
+            android:layout_marginLeft="28.32dp"
+            android:layout_marginTop="20.37dp"
+            android:src="@drawable/back_icon" />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginLeft="-28.32dp"
+            android:fontFamily="@font/notosanscjkkr_bold"
             android:gravity="center"
-            android:lineHeight="22dp"
-            android:lineSpacingExtra="-0.42dp"
+            android:lineHeight="22sp"
+            android:lineSpacingExtra="-0.42sp"
             android:text="내 정보"
             android:textColor="#000000"
-            android:textSize="17dp"
+            android:textSize="17sp"></TextView>
+    </LinearLayout>
 
-            ></TextView>
-    </RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,17 +48,19 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="59dp"
-            android:layout_height="59dp"
+        <ImageView
+            android:layout_width="118dp"
+            android:layout_height="118dp"
             android:layout_gravity="center"
             android:layout_marginTop="94dp"
+            android:src="@drawable/big_grey"
+            ></ImageView>
 
-            android:background="@color/greytext"></LinearLayout>
+
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="36dp"
@@ -60,38 +72,59 @@
             android:textSize="18dp"></TextView>
 
         <LinearLayout
+            android:id="@+id/add_place"
             android:layout_width="180dp"
             android:layout_height="35.19dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="40dp"
+            android:background="@drawable/button_background"
+            android:paddingRight="40dp"
             android:layout_gravity="center"
             android:orientation="horizontal">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <ImageView
+                android:src="@drawable/ic_plus"
+                android:layout_height="14dp"
+                android:layout_width="14dp"
 
-                android:drawablePadding="-50dp"
+                ></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
-                android:paddingLeft="50dp"
-                android:text="장소 추가"></Button>
+                android:paddingLeft="5dp"
+                android:text="장소 추가"></TextView>
         </LinearLayout>
 
         <LinearLayout
+            android:background="@drawable/button_background"
             android:layout_width="180dp"
             android:layout_height="35.19dp"
             android:layout_gravity="center"
             android:layout_marginTop="7.8dp"
             android:layout_marginBottom="143.8dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/my_post"
+            android:gravity="center_vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            >
+            <ImageView
+                android:src="@drawable/icn_pencil"
+                android:layout_height="14dp"
+                android:layout_width="14dp"
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:drawablePadding="-50dp"
+                ></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanscjkkr_medium"
                 android:gravity="center"
-                android:paddingLeft="50dp"
-                android:text="장소 추가"></Button>
+                android:paddingLeft="5dp"
+                android:text="나의 작성글"></TextView>
         </LinearLayout>
     </LinearLayout>
 

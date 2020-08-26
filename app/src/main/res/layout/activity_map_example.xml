@@ -216,6 +216,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:text="list" />
+
+        <Button
+            android:id="@+id/my_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="MY" />
         <!--
       android:layout_width="24.41dp"
       android:layout_height="25.1dp"-->

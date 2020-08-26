@@ -7,7 +7,7 @@ import android.os.Handler
 import com.example.kotlin_tmap.map.MapExample
 
 class LoadingActivity : AppCompatActivity() {
-    private val SPLASH_TIME_OUT:Long = 2000
+    private val SPLASH_TIME_OUT:Long = 1000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loading)
