@@ -14,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlin_tmap.map.MapExample
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_empty_commetn.*
 import kotlinx.android.synthetic.main.activity_place_detail.*
@@ -74,6 +75,23 @@ class PlaceDetail : AppCompatActivity() {
                 recycler_comments.layoutManager = LinearLayoutManager(this@PlaceDetail)
             }
         })
+
+        // start of navibar
+        btn_map_of_detail.setOnClickListener {
+            startActivity(Intent(this, MapExample::class.java))
+            finish()
+        }
+
+        btn_list_of_detail.setOnClickListener{
+            startActivity(Intent(this, PlaceList::class.java))
+            finish()
+        }
+
+        btn_my_of_detail.setOnClickListener{
+            startActivity(Intent(this, MyPage::class.java))
+            finish()
+        }
+        // end of navi-bar
     }
     /*getPlaceInfoAndDraw(this@PlaceDetail)
     NetworkTask2(
