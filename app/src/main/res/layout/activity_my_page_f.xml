@@ -14,18 +14,18 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:fontFamily="@font/notosanscjkkr_bold"
-            android:lineHeight="22dp"
-            android:lineSpacingExtra="-0.42dp"
-            android:text="내 정보"
-            android:textColor="#000000"
-            android:textSize="17dp"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:fontFamily="@font/notosanscjkkr_bold"
+                    android:lineHeight="22dp"
+                    android:lineSpacingExtra="-0.42dp"
+                    android:text="내 정보"
+                    android:textColor="#000000"
+                    android:textSize="17dp"
 
-            ></TextView>
+                    ></TextView>
     </RelativeLayout>
 
     <LinearLayout
@@ -58,7 +58,7 @@
             android:layout_width="188.28dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="101.93dp"
+            android:layout_marginTop="99.9dp"
             android:orientation="horizontal">
 
 
@@ -67,10 +67,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:layout_marginTop="-10dp"
                 android:bufferType="normal"
                 android:fontFamily="@font/notosanscjkkr_light"
                 android:hint="아이디(이메일 주소)"
+                android:paddingLeft="5dp"
                 android:textColor="#000000"
                 android:textSize="12dp" />
         </LinearLayout>
@@ -84,17 +84,56 @@
 
 
             <EditText
-                android:id="@+id/new_name_add"
-                android:fontFamily="@font/notosanscjkkr_light"
+                android:id="@+id/input_pwd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:layout_marginTop="-10dp"
                 android:bufferType="normal"
+                android:fontFamily="@font/notosanscjkkr_light"
                 android:hint="비밀번호"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
                 android:textColor="#000000"
                 android:textSize="12dp" />
         </LinearLayout>
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/signin_layout"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_marginTop="99.9dp"-->
+        <!--            android:orientation="vertical">-->
+
+
+        <!--            <Button-->
+        <!--                android:id="@+id/google_sign_in_btn"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="40dp"-->
+        <!--                android:layout_marginLeft="20dp"-->
+        <!--                android:layout_marginRight="20dp"-->
+        <!--                android:layout_marginBottom="5dp"-->
+        <!--                android:background="@drawable/btn_signin_google"-->
+        <!--                android:fontFamily="@font/notosanscjkkr_regular"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text="@string/signin_google"-->
+        <!--                android:textColor="#FFFFFF" />-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/facebook_login_btn"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="40dp"-->
+        <!--                android:layout_marginLeft="20dp"-->
+        <!--                android:layout_marginRight="20dp"-->
+        <!--                android:layout_marginBottom="100dp"-->
+        <!--                android:background="@drawable/btn_signin_facebook"-->
+        <!--                android:fontFamily="@font/notosanscjkkr_regular"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text="@string/signin_facebook"-->
+        <!--                android:textColor="#FFFFFF" />-->
+
+
+        <!--        </LinearLayout>-->
+
         <Button
             android:id="@+id/submit_add"
             android:layout_width="156.57dp"
@@ -102,9 +141,35 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="68.96dp"
             android:fontFamily="@font/notosanscjkkr_medium"
+            android:gravity="center"
             android:text="로그인"
             android:textColor="#FFFFFF"
+            android:background="#000000"
             android:textSize="16dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아직 회원이 아니신가요?"
+                android:textColor="#000000"
+                android:fontFamily="@font/notosanscjkkr_light"
+                ></TextView>
+            <TextView
+                android:id="@+id/btn_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  회원가입"
+                android:textColor="#000000"
+                android:clickable="true"
+                android:fontFamily="@font/notosanscjkkr_bold"
+                ></TextView>
+        </LinearLayout>
     </LinearLayout>
+
 
 </LinearLayout>

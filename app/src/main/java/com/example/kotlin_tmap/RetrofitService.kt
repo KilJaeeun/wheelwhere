@@ -22,4 +22,14 @@ interface RetrofitService {
         @Body rest: CommentRegister
     ): Call<CommentRegister>
 
+    @FormUrlEncoded
+    @POST("/rest-auth/registration/")
+    fun register(
+        @Field("username") username:String,
+        @Field("password1") password1:String,
+        @Field("password2") password2:String
+    ): Call<User>
+
+
+
 }
