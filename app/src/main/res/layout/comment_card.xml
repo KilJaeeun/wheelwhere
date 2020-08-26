@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="302.04dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="50dp"
+    android:layout_marginTop="19.64dp"
+    android:background="@drawable/border"
+    android:elevation="3dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="12.18dp"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginLeft="15.02dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/sample_circle" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/username_of_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1.82dp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:text="name"
+                    android:textColor="#000000"
+                    android:textSize="10dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="8.8dp"
+                        android:layout_height="8.8dp"
+                        android:background="@drawable/empty_star" />
+
+                    <ImageView
+                        android:layout_width="8.8dp"
+                        android:layout_height="8.8dp"
+                        android:background="@drawable/empty_star" />
+
+                    <ImageView
+                        android:layout_width="8.8dp"
+                        android:layout_height="8.8dp"
+                        android:background="@drawable/empty_star" />
+
+                    <ImageView
+                        android:layout_width="8.8dp"
+                        android:layout_height="8.8dp"
+                        android:background="@drawable/empty_star" />
+
+                    <ImageView
+                        android:layout_width="8.8dp"
+                        android:layout_height="8.8dp"
+                        android:background="@drawable/empty_star" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/date_of_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="140dp"
+                android:fontFamily="@font/notosanscjkkr_regular"
+                android:text="2020.08.26"
+                android:textColor="#8F8F8F"
+                android:textSize="10dp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/comment_of_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15.02dp"
+            android:layout_marginTop="16.23dp"
+            android:layout_marginBottom="19.95dp"
+            android:fontFamily="@font/notosanscjkkr_regular"
+            android:text="This is comment. This is comment. This is comment. This is comment. \n This is comment. This is comment. This is comment. This is comment. "
+            android:textColor="#8F8F8F"
+            android:textSize="10dp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

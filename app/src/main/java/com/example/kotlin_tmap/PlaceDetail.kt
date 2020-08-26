@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_empty_commetn.*
@@ -45,13 +46,75 @@ class PlaceDetail : AppCompatActivity() {
         detail_address.setText(address)
         detail_number.setText(number)
 
-        /*getPlaceInfoAndDraw(this@PlaceDetail)
-        NetworkTask2(
-            comments_list,
-            LayoutInflater.from(this@PlaceDetail)
-        ).execute()
-        */
+        val retrofit = Retrofit.Builder().baseUrl("http://3.35.90.80")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+        val service = retrofit.create(RetrofitService::class.java)
+
+        service.getComments().enqueue(object : Callback<ArrayList<CommentRegister>> {
+            override fun onFailure(call: Call<ArrayList<CommentRegister>>, t: Throwable) {
+                Log.d("result!!", "getting comment error")
+            }
+
+            override fun onResponse(
+                call: Call<ArrayList<CommentRegister>>,
+                response: Response<ArrayList<CommentRegister>>
+            ) {
+                val dataList = response.body()
+                val comments = ArrayList<CommentRegister>()
+                for (d in dataList!!) {
+                    comments.add(d)
+                }
+
+                val adapter = RecyclerViewAdapter2(
+                    comments,
+                    LayoutInflater.from(this@PlaceDetail),
+                    this@PlaceDetail
+                )
+                recycler_comments.adapter = adapter
+                recycler_comments.layoutManager = LinearLayoutManager(this@PlaceDetail)
+            }
+        })
     }
+    /*getPlaceInfoAndDraw(this@PlaceDetail)
+    NetworkTask2(
+        comments_list,
+        LayoutInflater.from(this@PlaceDetail)
+    ).execute()
+    */
+}
+
+class RecyclerViewAdapter2(
+    val itemList: ArrayList<CommentRegister>,
+    val inflater: LayoutInflater,
+    val activity: Activity
+) : RecyclerView.Adapter<RecyclerViewAdapter2.ViewHolder>() {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val cname: TextView
+        val pdate: TextView
+        val comment: TextView
+
+        init {
+            cname = itemView.findViewById(R.id.username_of_comment)
+            pdate = itemView.findViewById(R.id.date_of_comment)
+            comment = itemView.findViewById(R.id.comment_of_card)
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = inflater.inflate(R.layout.comment_card, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return itemList.size
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.cname.setText(itemList[position].name)
+        holder.pdate.setText(itemList[position].date)
+        holder.comment.setText(itemList[position].text)
+    }
+}
 
 /*
     fun getPlaceInfoAndDraw(activity: Activity) {
@@ -196,5 +259,5 @@ class CommentAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.text.setText(personList.get(position).text ?: "")
-    }*/
-}
+    }
+}*/
