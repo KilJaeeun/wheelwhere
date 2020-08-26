@@ -11,9 +11,9 @@
     <application
         android:name=".base.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_tmap_icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_tmap_icon_round"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -38,11 +38,7 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
         <activity android:name=".PlaceList">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MasterApplication"
@@ -52,7 +48,13 @@
         <activity android:name=".map.SearchPOI" />
         <activity android:name=".map.ReverseGeo" />
         <activity android:name=".map.RouteInfo" />
-        <activity android:name=".map.MapExample"></activity>
+        <activity android:name=".map.MapExample">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
