@@ -97,18 +97,18 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
             tmapview.setSightVisible(true)
         }
 
-        add_button.setOnClickListener {
-            val intent = Intent(this, AddPlace::class.java)
+        btn_map_of_map.setOnClickListener {
+            val intent = Intent(this, MapExample::class.java)
             startActivity(intent)
             finish()
         }
 
-        list_button.setOnClickListener {
+        btn_list_of_map.setOnClickListener {
             val intent = Intent(this, PlaceList::class.java)
             startActivity(intent)
             finish()
         }
-       my_page.setOnClickListener {
+       btn_my_of_map.setOnClickListener {
             val intent = Intent(this, MyPage::class.java)
             startActivity(intent)
             finish()

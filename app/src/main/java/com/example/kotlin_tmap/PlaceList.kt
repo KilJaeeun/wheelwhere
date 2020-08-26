@@ -14,7 +14,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlin_tmap.map.MapExample
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_place_detail.*
 import kotlinx.android.synthetic.main.activity_place_list.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -63,6 +65,23 @@ class PlaceList : AppCompatActivity() {
                 }
             }
         })
+
+        // start of navibar
+        btn_map_of_list.setOnClickListener {
+            startActivity(Intent(this, MapExample::class.java))
+            finish()
+        }
+
+        btn_list_of_list.setOnClickListener{
+            startActivity(Intent(this, PlaceList::class.java))
+            finish()
+        }
+
+        btn_my_of_list.setOnClickListener{
+            startActivity(Intent(this, MyPage::class.java))
+            finish()
+        }
+        // end of navi-bar
     }
 }
 

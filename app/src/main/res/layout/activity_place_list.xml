@@ -54,5 +54,73 @@
         android:layout_height="match_parent" />
     <!--app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
 
+    <!-- start of navibar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_marginTop="-61dp"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_map_of_list"
+            android:layout_width="24.41dp"
+            android:layout_height="25.1dp"
+            android:layout_marginLeft="85dp"
+            android:src="@drawable/ic_map_non_sel" />
+
+        <ImageView
+            android:id="@+id/btn_list_of_list"
+            android:layout_width="16.67dp"
+            android:layout_height="24.86dp"
+            android:layout_marginLeft="85dp"
+            android:src="@drawable/ic_loc_sel" />
+
+        <ImageView
+            android:id="@+id/btn_my_of_list"
+            android:layout_width="24.12dp"
+            android:layout_height="24.13dp"
+            android:layout_marginLeft="95dp"
+            android:src="@drawable/ic_my_non_sel" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-18dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:text="지도"
+            android:textColor="#8F8F8F"
+            android:textSize="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:text="장소 리스트"
+            android:textColor="#000000"
+            android:textSize="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="78dp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:text="마이페이지"
+            android:textColor="#8F8F8F"
+            android:textSize="8dp" />
+
+    </LinearLayout>
+    <!-- end of navi-bar -->
+
 
 </LinearLayout>
