@@ -53,7 +53,7 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
         )
         val tMapPoint = TMapPoint(37.579600, 126.976998)
 
-        btnMove.setOnClickListener {
+    /*    btnMove.setOnClickListener {
             markerItem.icon = bitmapIcon
             markerItem.setPosition(0.5f, 1.0f)
             markerItem.tMapPoint = tMapPoint
@@ -61,7 +61,7 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
             tmapview.addMarkerItem("markerItem", markerItem)
             tmapview.setCenterPoint(126.976998, 37.579600, true)
         }
-
+*/
         buttonZoomIn.setOnClickListener {
             tmapview.MapZoomIn()
         }
@@ -70,9 +70,7 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
             tmapview.MapZoomOut()
         }
 
-        buttonZoomLevel10.setOnClickListener {
-            tmapview.zoomLevel = 10
-        }
+
 
         btnMyLocation.setOnClickListener {
             val tmapgps = TMapGpsManager(this)
@@ -95,11 +93,13 @@ class MapExample : AppCompatActivity(), TMapGpsManager.onLocationChangedCallback
         add_button.setOnClickListener {
             val intent = Intent(this, AddPlace::class.java)
             startActivity(intent)
+            finish()
         }
 
         list_button.setOnClickListener {
             val intent = Intent(this, PlaceList::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

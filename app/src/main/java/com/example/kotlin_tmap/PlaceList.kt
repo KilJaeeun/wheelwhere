@@ -193,6 +193,7 @@ class PersonAdapter(
 
 
             itemView.setOnClickListener {
+                Log.d("detail","click")
                 val intent = Intent(activity, PlaceDetail::class.java)
                 intent.putExtra("post", personList.get(adapterPosition).id.toString())
                 intent.putExtra("name", personList.get(adapterPosition).name)
