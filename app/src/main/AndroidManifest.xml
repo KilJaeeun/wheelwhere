@@ -16,7 +16,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ImageOverlay"></activity>
+        <activity android:name=".LoadingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".PlaceDetail" />
         <activity android:name=".AddPlace" />
 
@@ -28,8 +34,8 @@
         <activity android:name=".Loading" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main"></activity>
-        <activity android:name=".PlaceList"></activity>
+            android:label="@string/title_activity_main" />
+        <activity android:name=".PlaceList" />
         <activity
             android:name=".MasterApplication"
             tools:ignore="Instantiatable" />
@@ -39,11 +45,7 @@
         <activity android:name=".map.ReverseGeo" />
         <activity android:name=".map.RouteInfo" />
         <activity android:name=".map.MapExample">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
