@@ -4,9 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".PlaceList"
-    android:background="#FFFFFF">
+    tools:context=".PlaceList">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52.99dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="51.99dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="57dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="17dp"
+                android:src="@drawable/logo_wheelwhere" />
+
+            <Button
+                android:layout_width="256dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="13dp"
+                android:background="@drawable/btn_pl" />
+
+            <Button
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="-26dp"
+                android:background="@drawable/icon_search" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#707070" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_places"

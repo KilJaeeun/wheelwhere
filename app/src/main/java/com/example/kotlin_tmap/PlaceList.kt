@@ -35,12 +35,11 @@ class PlaceList : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create()).build()
         val service = retrofit.create(RetrofitService::class.java)
 
-        NetworkTask(
+        /*NetworkTask(
             recycler_places,
             LayoutInflater.from(this@PlaceList),
             this@PlaceList
-        ).execute()
-        Log.d("result!!", "service is just started. ")
+        ).execute()*/
         service.getDataList().enqueue(object : Callback<ArrayList<Place>> {
             override fun onFailure(call: Call<ArrayList<Place>>, t: Throwable) {
                 Log.d("result!!", "Error (getting data)!")
@@ -54,63 +53,23 @@ class PlaceList : AppCompatActivity() {
                     val dataList = response.body()
                     var places = ArrayList<Place>()
                     for (d in dataList!!) {
-                        Log.d("result!!", "name : " + d.name)
-                        /*places.add(
-                            Place(
-                                name = d.name,
-                                phone = d.phone,
-                                is_toilet = d.is_toilet,
-                                is_elevator = d.is_elevator,
-                                is_parking = d.is_parking,
-                                is_helper = d.is_helper,
-                                address = d.address,
-                                is_tuck = d.is_tuck,
-                                description = d.description,
-                                latitude = d.latitude,
-                                longitude = d.longitude,
-                                star = d.star,
-                                author = d.author
-                            )
-                        )*/
+                        //Log.d("result!!", "name : " + d.name)
                         places.add(d)
                     }
-                    /*places.add(
-                        Place(
-                            name = "1",
-                            phone = "2",
-                            is_toilet = false,
-                            is_elevator = false,
-                            is_helper = false,
-                            is_parking = false,
-                            is_tuck = false,
-                            address = "3",
-                            description = "4",
-                            latitude = "5",
-                            longitude = "6",
-                            star = "7",
-                            author = "8"
-                        )
-                    )*/
 
-                    Log.d("result!!", "done. " + places.size)
-
-                    val adapter = RecyclerViewAdapter(places, LayoutInflater.from(this@PlaceList))
-                    Log.d("result!!", "done1. ")
+                    val adapter = RecyclerViewAdapter(places, LayoutInflater.from(this@PlaceList), this@PlaceList)
                     recycler_places.adapter = adapter
-                    Log.d("result!!", "done2. ")
                     recycler_places.layoutManager = LinearLayoutManager(this@PlaceList)
-                    Log.d("result!!", "done3. ")
                 }
-                Log.d("result!!", "done4. ")
             }
         })
-        Log.d("result!!", "service is done. ")
     }
 }
 
 class RecyclerViewAdapter(
     val itemList: ArrayList<Place>,
-    val inflater: LayoutInflater
+    val inflater: LayoutInflater,
+    val activity: Activity
 ) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val pname: TextView
@@ -121,6 +80,14 @@ class RecyclerViewAdapter(
             pname = itemView.findViewById(R.id.list_name_card)
             paddress = itemView.findViewById(R.id.list_address_card)
             pnumber = itemView.findViewById(R.id.list_number_card)
+
+            itemView.setOnClickListener {
+                val intent = Intent(activity, PlaceDetail::class.java)
+                intent.putExtra("name", itemList[adapterPosition].name)
+                intent.putExtra("address", itemList[adapterPosition].address)
+                intent.putExtra("number", itemList[adapterPosition].phone)
+                activity.startActivity(intent)
+            }
         }
     }
 
@@ -139,7 +106,7 @@ class RecyclerViewAdapter(
         holder.pnumber.setText(itemList[position].phone)
     }
 }
-
+/*
 class NetworkTask(
     val recyclerView: RecyclerView,
     val inflater: LayoutInflater,
@@ -221,4 +188,4 @@ class PersonAdapter(
         holder.address.setText(personList.get(position).address.toString() ?: "")
         holder.number.setText("11111")
     }
-}
+}*/
