@@ -30,6 +30,11 @@ interface RetrofitService {
         @Field("password2") password2:String
     ): Call<User>
 
+    @GET("/search/")
+    fun search(
+        @Query("word") keyword:String
+    ):Call<ArrayList<LocationSearch>>
+
 
 
 }
