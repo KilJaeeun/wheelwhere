@@ -17,13 +17,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity_Sign_up">
-        </activity>
-        <activity android:name=".LoadingActivity">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".LoadingActivity">
+
         </activity>
         <activity android:name=".PlaceDetail" />
         <activity android:name=".AddPlace" />

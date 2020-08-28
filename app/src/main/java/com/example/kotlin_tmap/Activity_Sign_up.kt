@@ -2,6 +2,7 @@ package com.example.kotlin_tmap
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import retrofit2.Call
@@ -9,6 +10,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
+
 
 class Activity_Sign_up : AppCompatActivity() {
 
@@ -35,9 +38,11 @@ class Activity_Sign_up : AppCompatActivity() {
 
                 override fun onResponse(call: Call<User>, response: Response<User>) {
                     var dialog = AlertDialog.Builder(this@Activity_Sign_up)
-                    dialog.setTitle("성공")
-                    dialog.setMessage("성공")
-                    dialog.show()
+                    Log.d("key222", response.body()!!.key.toString())
+                    Log.d("key222", "hi")
+//                    dialog.setTitle("성공")
+//                    dialog.setMessage("성공")
+//                    dialog.show()
                 }
             })
         }
