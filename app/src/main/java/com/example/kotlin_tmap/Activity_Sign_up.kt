@@ -31,6 +31,7 @@ class Activity_Sign_up : AppCompatActivity() {
                 Callback<User>{
                 override fun onFailure(call: Call<User>, t: Throwable) {
                     var dialog = AlertDialog.Builder(this@Activity_Sign_up)
+                    Log.d("error","why",t)
                     dialog.setTitle("에러")
                     dialog.setMessage("호출실패")
                     dialog.show()
@@ -40,9 +41,9 @@ class Activity_Sign_up : AppCompatActivity() {
                     var dialog = AlertDialog.Builder(this@Activity_Sign_up)
                     Log.d("key222", response.body()!!.key.toString())
                     Log.d("key222", "hi")
-//                    dialog.setTitle("성공")
-//                    dialog.setMessage("성공")
-//                    dialog.show()
+                    dialog.setTitle("성공")
+                    dialog.setMessage("성공")
+                    dialog.show()
                 }
             })
         }

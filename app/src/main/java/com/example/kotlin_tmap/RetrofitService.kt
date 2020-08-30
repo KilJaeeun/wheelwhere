@@ -33,7 +33,7 @@ interface RetrofitService {
     @GET("/search/")
     fun search(
         @Query("word") keyword:String
-    ):Call<ArrayList<LocationSearch>>
+    ):Call<ArrayList<object_list>>
 
 
 

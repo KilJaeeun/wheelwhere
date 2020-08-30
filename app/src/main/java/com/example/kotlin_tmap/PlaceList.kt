@@ -3,7 +3,6 @@ package com.example.kotlin_tmap
 
 import android.app.Activity
 import android.content.Intent
-import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,18 +14,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin_tmap.map.MapExample
-import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_place_detail.*
 import kotlinx.android.synthetic.main.activity_place_list.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.net.HttpURLConnection
-import java.net.URL
 
 class PlaceList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,6 +74,26 @@ class PlaceList : AppCompatActivity() {
             startActivity(Intent(this, MyPage::class.java))
             finish()
         }
+        search_location.setOnClickListener {
+            val key=keyword_place.text.toString()
+            service.search(key).enqueue(object : Callback<ArrayList<object_list>>{
+                override fun onFailure(call: Call<ArrayList<object_list>>, t: Throwable) {
+                    Log.d("failddd","location",t)
+                }
+
+                override fun onResponse(
+                    call: Call<ArrayList<object_list>>,
+                    response: Response<ArrayList<object_list>>
+                ) {
+                    if(response.isSuccessful){
+                        val postList=response.body()
+                        Log.d("successddd","됐나?")
+                    }
+                }
+            }
+            )
+        }
+
         // end of navi-bar
     }
 }

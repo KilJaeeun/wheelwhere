@@ -31,8 +31,7 @@ class CommentRegister(
     var text: String? = null,
     var star: Float? = null
 ) : Serializable
-class LocationSearch(
-    val msg:String,
+class object_list(
     var id:Int?=null,
     var name: String? = null,
     var is_toilet:Boolean,
