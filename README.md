@@ -33,6 +33,6 @@ Google, Kakao,네이버 소셜로그인을 이용한 간편 로그인 및 회원
 
 ## stack
 
-- kotlin
-- xml
-- drf 서버
+- Kotlin
+- Xml
+- Drf 서버
